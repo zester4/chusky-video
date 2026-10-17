@@ -1,0 +1,64 @@
+<template>
+<style>
+@font-face{font-family:'Instrument Sans';src:url("assets/instrument-sans-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:'Instrument Sans';src:url("assets/instrument-sans-600.woff2") format("woff2");font-weight:600;font-style:normal}
+@font-face{font-family:'Instrument Sans';src:url("assets/instrument-sans-700.woff2") format("woff2");font-weight:700;font-style:normal}
+@font-face{font-family:'Instrument Serif';src:url("assets/instrument-serif-400.woff2") format("woff2");font-weight:400;font-style:normal}
+@font-face{font-family:'Instrument Serif';src:url("assets/instrument-serif-400.woff2") format("woff2");font-weight:400;font-style:italic}
+@font-face{font-family:'JetBrains Mono';src:url("assets/jetbrains-mono-400.woff2") format("woff2");font-weight:400;font-style:normal}
+*{box-sizing:border-box}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;color:#000;font-family:'Instrument Sans',sans-serif;background:transparent}
+.scene08-bg{position:absolute;inset:0;background:#fcfcfc}
+.scene08-content{position:absolute;inset:0;padding:82px 112px 220px}
+.scene08-eyebrow{position:absolute;top:82px;left:112px;margin:0;color:#525252;font:600 17px/1.2 'Instrument Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.scene08-title{position:absolute;top:126px;left:112px;margin:0;font:400 76px/.98 'Instrument Serif',serif;letter-spacing:-.025em;color:#000}
+.scene08-title em{font-style:italic}
+.scene08-marker{position:absolute;top:34px;right:44px;color:#525252;font:400 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em}
+.scene08-timeline{position:absolute;left:112px;right:112px;top:355px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.scene08-step{position:relative;min-width:0;padding:0 28px 20px 0}
+.scene08-step::before{content:"";position:absolute;top:0;left:0;right:0;border-top:1px solid #aaa;transform-origin:left center}
+.scene08-day{position:relative;display:block;padding-top:20px;margin:0 0 18px;color:#525252;font:400 13px/1.2 'JetBrains Mono',monospace;letter-spacing:.02em}
+.scene08-dot{position:absolute;top:-5px;left:0;width:11px;height:11px;border:1px solid #999;border-radius:50%;background:#fcfcfc}
+.scene08-step.is-current .scene08-dot{background:#000;border-color:#000}
+.scene08-step h2{margin:0;font:400 34px/1.12 'Instrument Serif',serif;color:#000}
+.scene08-step p{margin:9px 0 0;color:#525252;font:400 17px/1.4 'Instrument Sans',sans-serif}
+.scene08-note{position:absolute;left:112px;top:680px;margin:0;color:#525252;font:400 14px/1.4 'Instrument Sans',sans-serif}
+.scene08-thread{position:absolute;left:112px;top:863px;width:1696px;height:2px;background:#e5e5e5}
+.scene08-thread-fill{height:2px;width:81%;background:#000}
+</style>
+<div data-hf-id="hf-6abg" id="root" data-composition-id="08-later" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-cufx" id="f-08-later-background" class="clip scene08-bg" data-start="0" data-duration="6" data-track-index="0"></div>
+  <div data-hf-id="hf-0l7u" class="scene08-marker">ILLUSTRATIVE WORKFLOW</div>
+  <div data-hf-id="hf-vul4" class="scene08-content">
+    <p data-hf-id="hf-nc96" class="scene08-eyebrow">TIME PASSES · SCHEDULED WORK RESUMES</p>
+    <h1 data-hf-id="hf-v2yn" class="scene08-title">Still moving<br data-hf-id="hf-x5px"><em data-hf-id="hf-mjea">tomorrow.</em></h1>
+    <div data-hf-id="hf-l6q9" class="scene08-timeline" aria-label="Illustrative timeline: Day 1, Day 2, Later">
+      <section data-hf-id="hf-149k" class="scene08-step" data-beat="day1"><span data-hf-id="hf-jdwt" class="scene08-dot"></span><small data-hf-id="hf-82xe" class="scene08-day">DAY 1</small><h2 data-hf-id="hf-s7yu">Research</h2><p data-hf-id="hf-3b2k">Shortlist saved</p></section>
+      <section data-hf-id="hf-v9wh" class="scene08-step is-current" data-beat="day2"><span data-hf-id="hf-m76p" class="scene08-dot"></span><small data-hf-id="hf-8h8f" class="scene08-day">DAY 2</small><h2 data-hf-id="hf-403c">Follow-up</h2><p data-hf-id="hf-kib3">Scheduled next action</p></section>
+      <section data-hf-id="hf-1ry7" class="scene08-step" data-beat="later"><span data-hf-id="hf-ne3s" class="scene08-dot"></span><small data-hf-id="hf-ch7d" class="scene08-day">LATER</small><h2 data-hf-id="hf-5u28">Check in</h2><p data-hf-id="hf-4jaj">If someone becomes a customer</p></section>
+    </div>
+    <p data-hf-id="hf-f901" class="scene08-note">Illustrative path · outcomes vary; no conversion is implied.</p>
+  </div>
+  <div data-hf-id="hf-14h8" class="scene08-thread" aria-hidden="true"><div data-hf-id="hf-f389" class="scene08-thread-fill"></div></div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["08-later"] = tl;
+    const byBeat = (name) => document.querySelector('#root [data-beat="' + name + '"]');
+    const day1 = byBeat('day1');
+    const day2 = byBeat('day2');
+    const later = byBeat('later');
+    const eyebrow = document.querySelector('#root .scene08-eyebrow');
+    const title = document.querySelector('#root .scene08-title');
+    const note = document.querySelector('#root .scene08-note');
+    const threadFill = document.querySelector('#root .scene08-thread-fill');
+    tl.fromTo(eyebrow, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.28, ease: 'power3.out' }, 0.02);
+    tl.fromTo(title, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.48, ease: 'power3.out' }, 0.08);
+    tl.fromTo(day1, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.42, ease: 'power3.out' }, 0.35);
+    tl.fromTo(day2, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.48, ease: 'power3.out' }, 1.42);
+    tl.fromTo(later, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.46, ease: 'power3.out' }, 3.62);
+    tl.fromTo(note, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.38, ease: 'power3.out' }, 4.08);
+    tl.fromTo(threadFill, { scaleX: 0.94, transformOrigin: 'left center' }, { scaleX: 1, duration: 5.55, ease: 'none' }, 0.18);
+    tl.seek(0);
+  </script>
+</div>
+</template>

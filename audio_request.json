@@ -1,0 +1,50 @@
+{
+  "provider": "kokoro",
+  "speed": "0.96",
+  "lines": [
+    {
+      "id": "01",
+      "text": "You gave it one message."
+    },
+    {
+      "id": "02",
+      "text": "Chusky turns it into work."
+    },
+    {
+      "id": "03",
+      "text": "It researches the right people, checks the fit, and builds the list."
+    },
+    {
+      "id": "04",
+      "text": "Saves it to your connected tools. Then prepares outreach for each person."
+    },
+    {
+      "id": "05",
+      "text": "With your approval, it reaches out—and schedules what comes next."
+    },
+    {
+      "id": "06",
+      "text": "It can make and answer calls, join meetings, and carry the conversation forward."
+    },
+    {
+      "id": "07",
+      "text": "Then turn what was agreed into work across your tools."
+    },
+    {
+      "id": "08",
+      "text": "It can return tomorrow, follow up, and keep checking in after someone becomes a customer."
+    },
+    {
+      "id": "09",
+      "text": "With budgets, approvals, and a record of what happened."
+    },
+    {
+      "id": "10",
+      "text": "Chusky. Give it the goal. Keep your authority."
+    }
+  ],
+  "bgm": {
+    "mode": "none"
+  },
+  "voice": "am_michael"
+}

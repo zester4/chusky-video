@@ -1,0 +1,105 @@
+<template>
+  <style>
+    @font-face{font-family:"Instrument Sans";src:url("assets/instrument-sans-400.woff2") format("woff2");font-weight:400;font-style:normal}
+    @font-face{font-family:"Instrument Sans";src:url("assets/instrument-sans-600.woff2") format("woff2");font-weight:600;font-style:normal}
+    @font-face{font-family:"Instrument Serif";src:url("assets/instrument-serif-400.woff2") format("woff2");font-weight:400;font-style:normal}
+    @font-face{font-family:"JetBrains Mono";src:url("assets/jetbrains-mono-400.woff2") format("woff2");font-weight:400;font-style:normal}
+    *{box-sizing:border-box}
+    #root{position:relative;width:1920px;height:1080px;overflow:hidden;color:#000;font-family:"Instrument Sans",sans-serif;background:transparent}
+    .\30 5-approval-bg{position:absolute;inset:0;background:#fcfcfc}
+    .\30 5-approval-marker{position:absolute;top:34px;right:44px;color:#525252;font:400 12px/1 "JetBrains Mono",monospace;letter-spacing:.04em}
+    .\30 5-approval-title{position:absolute;left:112px;top:180px;width:570px}
+    .\30 5-approval-eyebrow{margin:0 0 20px;color:#525252;font:600 17px/1.2 "Instrument Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+    .\30 5-approval-title h1{margin:0;font:400 68px/.98 "Instrument Serif",serif;letter-spacing:-.025em}
+    .\30 5-approval-title em{font-style:italic}
+    .\30 5-approval-layout{position:absolute;left:690px;right:112px;top:170px;display:grid;grid-template-columns:1.5fr .8fr;gap:22px;align-items:start}
+    .\30 5-approval-card{background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:14px;padding:28px}
+    .\30 5-approval-draft{min-height:445px}
+    .\30 5-approval-card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,.12);font-size:18px}
+    .\30 5-approval-badge{flex:0 0 auto;padding:8px 12px;border:1px solid rgba(0,0,0,.12);border-radius:999px;color:#525252;font:400 12px/1 "JetBrains Mono",monospace;letter-spacing:.02em;white-space:nowrap}
+    .\30 5-approval-recipient{margin:22px 0;color:#525252;font-size:14px}
+    .\30 5-approval-message{min-height:125px;padding:22px;border:1px solid rgba(0,0,0,.12);border-radius:10px;color:#252525;font-size:18px;line-height:1.5}
+    .\30 5-approval-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;color:#525252;font-size:14px}
+    .\30 5-approval-button{position:relative;flex:0 0 auto;min-height:46px;padding:13px 18px;border:0;border-radius:999px;background:#000;color:#fff;font:600 14px/1 "Instrument Sans",sans-serif;white-space:nowrap;transform-origin:50% 50%}
+    .\30 5-approval-button-state{display:none;align-items:center;gap:8px;color:#000;font-weight:600}
+    .\30 5-approval-check{display:inline-grid;width:20px;height:20px;place-items:center;border:1px solid #000;border-radius:50%;font-size:12px;line-height:1}
+    .\30 5-approval-ripple{position:absolute;left:50%;top:50%;width:88px;height:88px;border:1px solid rgba(0,0,0,.36);border-radius:50%;transform:translate(-50%,-50%) scale(0);opacity:0;pointer-events:none}
+    .\30 5-approval-schedule{min-height:260px}
+    .\30 5-approval-schedule small{color:#525252;font:400 12px/1.2 "JetBrains Mono",monospace;letter-spacing:.02em}
+    .\30 5-approval-schedule h2{margin:18px 0 8px;font:400 40px/1.05 "Instrument Serif",serif}
+    .\30 5-approval-date{padding:16px 0;border-top:1px solid rgba(0,0,0,.12);border-bottom:1px solid rgba(0,0,0,.12);font-size:16px}
+    .\30 5-approval-schedule p{margin:16px 0 0;color:#525252;font-size:15px;line-height:1.45}
+    .\30 5-approval-scheduled{display:flex;align-items:center;gap:9px;margin-top:18px;padding:12px 14px;border:1px solid rgba(0,0,0,.12);border-radius:10px;background:rgba(0,0,0,.02);font-size:14px;font-weight:600}
+    .\30 5-approval-scheduled-mark{width:8px;height:8px;border-radius:50%;background:#000}
+    .\30 5-approval-cursor{position:absolute;left:730px;top:745px;width:32px;height:42px;z-index:9;pointer-events:none;transform-origin:5px 5px}
+    .\30 5-approval-thread{position:absolute;left:112px;top:864px;width:1696px;height:2px;background:rgba(0,0,0,.12)}
+    .\30 5-approval-thread-fill{width:50%;height:100%;background:#000;transform-origin:left center}
+  </style>
+  <div data-hf-id="hf-0ey1" id="root" data-composition-id="05-approval" data-width="1920" data-height="1080" data-duration="6.5">
+    <div data-hf-id="hf-9gpf" id="f-05-approval-background" class="clip 05-approval-bg" data-start="0" data-duration="6.5" data-track-index="0"></div>
+    <div data-hf-id="hf-vedx" class="05-approval-marker">ILLUSTRATIVE WORKFLOW</div>
+    <div data-hf-id="hf-622a" class="05-approval-title">
+      <p data-hf-id="hf-un5f" class="05-approval-eyebrow">OUTBOUND · APPROVAL GATE</p>
+      <h1 data-hf-id="hf-emem">Your approval.<br data-hf-id="hf-x5px"><em data-hf-id="hf-e0v8">Then the next step.</em></h1>
+    </div>
+    <div data-hf-id="hf-0j1m" class="05-approval-layout">
+      <section data-hf-id="hf-jczp" class="05-approval-card 05-approval-draft" aria-label="Prepared outreach awaiting approval">
+        <div data-hf-id="hf-tcg5" class="05-approval-card-head"><strong data-hf-id="hf-wqiu">Prepared outreach</strong><span data-hf-id="hf-tb1c" class="05-approval-badge" id="f-05-approval-status">NOT SENT</span></div>
+        <p data-hf-id="hf-uk9r" class="05-approval-recipient">To: Prospect 01 · Company A</p>
+        <div data-hf-id="hf-pr56" class="05-approval-message">Hello — I came across your team’s work in this area and thought our new app may be relevant. Would it be useful to share a short overview?</div>
+        <div data-hf-id="hf-m4hd" class="05-approval-footer">
+          <span data-hf-id="hf-t5in" id="f-05-approval-pending">Approval required before sending</span>
+          <button data-hf-id="hf-1hdw" class="05-approval-button" id="f-05-approval-button" type="button">Review &amp; approve<span data-hf-id="hf-655o" class="05-approval-ripple" id="f-05-approval-ripple"></span></button>
+          <span data-hf-id="hf-iqov" class="05-approval-button-state" id="f-05-approval-approved"><span data-hf-id="hf-9d8s" class="05-approval-check">✓</span> Approved · sent</span>
+        </div>
+      </section>
+      <section data-hf-id="hf-lygj" class="05-approval-card 05-approval-schedule" id="f-05-approval-schedule" aria-label="Scheduled future follow-up">
+        <small data-hf-id="hf-j519">NEXT ACTION</small>
+        <h2 data-hf-id="hf-kngb">Follow up</h2>
+        <div data-hf-id="hf-anxx" class="05-approval-date">Tomorrow · scheduled</div>
+        <p data-hf-id="hf-7ekx">Chusky will resume at the scheduled time.</p>
+        <div data-hf-id="hf-emj2" class="05-approval-scheduled" id="f-05-approval-scheduled"><span data-hf-id="hf-hn8w" class="05-approval-scheduled-mark"></span>Queued for tomorrow</div>
+      </section>
+    </div>
+    <div data-hf-id="hf-hhls" class="05-approval-cursor" id="f-05-approval-cursor" aria-hidden="true">
+      <svg data-hf-id="hf-fu3y" width="32" height="42" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path data-hf-id="hf-3tb7" d="M2 2L2.2 30.8L9.5 23.8L15.1 37.2L21 34.8L15.3 21.6L26.2 21L2 2Z" fill="#FCFCFC" stroke="#000" stroke-width="2" stroke-linejoin="round"/><path data-hf-id="hf-e0ql" d="M10.3 24.1L15.1 37.2" stroke="#000" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+    <div data-hf-id="hf-hhrc" class="05-approval-thread"><div data-hf-id="hf-fs4i" class="05-approval-thread-fill"></div></div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["05-approval"] = tl;
+      const at = (selector) => document.querySelector(selector);
+      const title = at('[class~="05-approval-title"]');
+      const draft = at('[class~="05-approval-draft"]');
+      const recipient = at('[class~="05-approval-recipient"]');
+      const message = at('[class~="05-approval-message"]');
+      const pending = document.getElementById("f-05-approval-pending");
+      const button = document.getElementById("f-05-approval-button");
+      const status = document.getElementById("f-05-approval-status");
+      const approved = document.getElementById("f-05-approval-approved");
+      const cursor = document.getElementById("f-05-approval-cursor");
+      const ripple = document.getElementById("f-05-approval-ripple");
+      const schedule = document.getElementById("f-05-approval-schedule");
+      const scheduled = document.getElementById("f-05-approval-scheduled");
+
+      tl.fromTo(title, { y: 12, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.42, ease: "power3.out" }, 0.04);
+      tl.fromTo(draft, { y: 16, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.46, ease: "power3.out" }, 0.22);
+      tl.fromTo([recipient, message], { y: 9, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.34, stagger: 0.12, ease: "power3.out" }, 0.70);
+      tl.fromTo([pending, button], { y: 8, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.3, stagger: 0.1, ease: "power3.out" }, 1.20);
+
+      // Cursor click sequence: considered move, paired button depression, restrained single ripple.
+      tl.to(cursor, { x: 561, y: -268, duration: 0.62, ease: "power2.inOut" }, 1.63);
+      tl.to(cursor, { scale: 0.86, duration: 0.08, ease: "power2.in", yoyo: true, repeat: 1 }, 2.34);
+      tl.to(button, { scale: 0.95, duration: 0.08, ease: "power2.in", yoyo: true, repeat: 1 }, 2.34);
+      tl.to(ripple, { scale: 2.8, autoAlpha: 0, duration: 0.72, ease: "power2.out" }, 2.40);
+      tl.set([button, pending], { display: "none" }, 2.55);
+      tl.set([approved, status], { display: "inline-flex", autoAlpha: 1 }, 2.55);
+      tl.fromTo(approved, { scale: 0.94 }, { scale: 1, duration: 0.42, ease: "back.out(1.5)" }, 2.55);
+
+      // The future action arrives only after approval is visibly recorded.
+      tl.fromTo(schedule, { x: 14, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.46, ease: "power3.out" }, 3.56);
+      tl.fromTo(scheduled, { y: 8, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.34, ease: "power3.out" }, 4.25);
+      tl.seek(0);
+    </script>
+  </div>
+</template>

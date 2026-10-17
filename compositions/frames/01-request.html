@@ -1,0 +1,77 @@
+<template>
+<style>
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-700.woff2") format("woff2");font-weight:700}
+@font-face{font-family:Instrument Serif;src:url("assets/instrument-serif-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:JetBrains Mono;src:url("assets/jetbrains-mono-400.woff2") format("woff2");font-weight:400}
+*{box-sizing:border-box}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;color:#000;font-family:Instrument Sans,sans-serif;background:transparent}
+[class~="01-request-bg"]{position:absolute;inset:0;background:#fcfcfc}
+[class~="01-request-content"]{position:absolute;inset:0;padding:82px 112px 220px}
+[class~="01-request-left"]{position:absolute;left:112px;top:205px;width:600px}
+[class~="01-request-eyebrow"]{margin:0 0 20px;color:#525252;font:600 17px/1.2 Instrument Sans,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+[class~="01-request-left"] h1{margin:0;font:400 76px/.98 Instrument Serif,serif;letter-spacing:-.025em}
+[class~="01-request-left"] h1 em{font-style:italic}
+[class~="01-request-support"]{max-width:600px;margin:24px 0 0;color:#525252;font-size:23px;line-height:1.45}
+[class~="01-request-card"]{position:absolute;left:790px;top:220px;width:900px;background:#fff;border:1px solid #e5e5e5;border-radius:16px;padding:28px;box-shadow:0 16px 44px rgba(0,0,0,.035);clip-path:inset(0 100% 0 0)}
+[class~="01-request-card-head"]{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:20px;border-bottom:1px solid #e5e5e5;font-size:18px}
+[class~="01-request-badge"]{flex:0 0 auto;padding:8px 12px;border:1px solid #e5e5e5;border-radius:999px;color:#525252;font:400 12px/1 JetBrains Mono,monospace;letter-spacing:.02em}
+[class~="01-request-request"]{margin:26px 0 18px auto;width:80%;min-height:104px;padding:22px 25px;border-radius:14px;background:#f5f5f5;font-size:24px;line-height:1.45;opacity:0}
+[class~="01-request-request-text"]{white-space:pre-wrap}
+[class~="01-request-status"]{color:#525252;font-size:15px;opacity:0}
+[class~="01-request-status-dot"]{display:inline-block;width:8px;height:8px;margin-right:8px;border-radius:50%;background:#000}
+[class~="01-request-input"]{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:62px;margin-top:30px;padding:12px 14px 12px 20px;border:1px solid #e5e5e5;border-radius:999px;color:#666;font-size:17px}
+[class~="01-request-input-copy"]{flex:1;min-width:0;color:#000;white-space:pre-wrap}
+[class~="01-request-caret"]{display:inline-block;width:2px;height:21px;margin-left:2px;background:#000;vertical-align:-4px;opacity:1}
+[class~="01-request-send"]{display:grid;place-items:center;flex:0 0 auto;width:38px;height:38px;border:0;border-radius:50%;background:#000;color:#fff;font:600 20px/1 Instrument Sans,sans-serif;transform-origin:50% 50%}
+[class~="01-request-thread"]{position:absolute;left:112px;right:112px;top:863px;height:2px;background:#e5e5e5}
+[class~="01-request-thread-fill"]{height:100%;width:8%;background:#000;transform-origin:left center}
+[class~="01-request-marker"]{position:absolute;top:34px;right:44px;color:#525252;font:400 12px/1 JetBrains Mono,monospace;letter-spacing:.04em}
+</style>
+<div data-hf-id="hf-qs0g" id="root" data-composition-id="01-request" data-width="1920" data-height="1080" data-duration="5.5">
+  <div data-hf-id="hf-z7gg" id="f-01-request-background" class="clip 01-request-bg" data-start="0" data-duration="5.5" data-track-index="0"></div>
+  <div data-hf-id="hf-2ekl" class="01-request-content">
+    <div data-hf-id="hf-ozeh" id="f-01-request-left" class="01-request-left">
+      <p data-hf-id="hf-c9a5" class="01-request-eyebrow">A clear goal, in one message</p>
+      <h1 data-hf-id="hf-nu2b">The work starts<br data-hf-id="hf-x5px"><em data-hf-id="hf-k06v">with your words.</em></h1>
+      <p data-hf-id="hf-konh" class="01-request-support">One general-purpose worker takes the task and carries it forward.</p>
+    </div>
+    <div data-hf-id="hf-rjwn" id="f-01-request-card" class="01-request-card">
+      <div data-hf-id="hf-ple3" class="01-request-card-head"><strong data-hf-id="hf-k3iz">New conversation</strong><span data-hf-id="hf-m64d" class="01-request-badge">ILLUSTRATIVE WORKFLOW</span></div>
+      <div data-hf-id="hf-hmi1" class="01-request-request"><span data-hf-id="hf-teok" class="01-request-request-text"></span></div>
+      <div data-hf-id="hf-jfqy" class="01-request-status"><i data-hf-id="hf-yiai" class="01-request-status-dot"></i>Goal received · mission taking shape</div>
+      <div data-hf-id="hf-hqi6" class="01-request-input"><span data-hf-id="hf-ndgp" class="01-request-input-copy">Message Chusky…</span><span data-hf-id="hf-iyfp" class="01-request-caret" aria-hidden="true"></span><button data-hf-id="hf-5h0u" class="01-request-send" type="button" aria-label="Send">↑</button></div>
+    </div>
+  </div>
+  <div data-hf-id="hf-zc3i" class="01-request-thread"><div data-hf-id="hf-tie8" class="01-request-thread-fill"></div></div>
+  <div data-hf-id="hf-c0hr" class="01-request-marker">ILLUSTRATIVE WORKFLOW</div>
+  <script>
+  const tl=gsap.timeline({paused:true});
+  window.__timelines["01-request"]=tl;
+  const prompt="Find 20 good-fit prospects for our new app.\nPrepare the outreach.";
+  const inputCopy=document.querySelector('[class~="01-request-input-copy"]');
+  const requestCopy=document.querySelector('[class~="01-request-request-text"]');
+  const caret=document.querySelector('[class~="01-request-caret"]');
+  const input=document.querySelector('[class~="01-request-input"]');
+  const send=document.querySelector('[class~="01-request-send"]');
+  const driver={count:0};
+  const blink={phase:0};
+  tl.fromTo('[class~="01-request-left"]',{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:.72,ease:"power3.out"},.12);
+  tl.fromTo('[class~="01-request-card"]',{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:.82,ease:"power3.out"},.28);
+  tl.fromTo('[class~="01-request-thread-fill"]',{scaleX:0},{scaleX:1,duration:.55,ease:"power2.out"},1.18);
+  tl.to(input,{borderColor:"rgba(0,0,0,.32)",duration:.18,ease:"power1.out"},1.2);
+  tl.to(inputCopy,{color:"#000",duration:.12},1.2);
+  tl.to(driver,{count:prompt.length,duration:2.58,ease:"none",onUpdate:()=>{const n=Math.floor(driver.count);inputCopy.textContent=prompt.slice(0,n);}},1.2);
+  tl.to(blink,{phase:Math.PI*2*6,duration:4.8,ease:"none",onUpdate:()=>{caret.style.opacity=Math.sin(blink.phase)>0?"1":"0";}},.1);
+  tl.to(send,{scale:.94,duration:.12,ease:"power1.in"},3.82);
+  tl.to(send,{scale:1,duration:.46,ease:"back.out(1.4)"},3.94);
+  tl.to(inputCopy,{opacity:0,duration:.12,ease:"none"},3.86);
+  tl.to(caret,{opacity:0,duration:.08,ease:"none"},3.86);
+  tl.to('[class~="01-request-request"]',{opacity:1,duration:.24,ease:"power2.out"},3.9);
+  tl.to(requestCopy,{textContent:prompt,duration:0},3.9);
+  tl.to('[class~="01-request-status"]',{opacity:1,duration:.2,ease:"power2.out"},4.2);
+  tl.to(input,{borderColor:"#e5e5e5",duration:.2,ease:"power1.out"},4.18);
+  </script>
+</div>
+</template>

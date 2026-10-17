@@ -1,0 +1,64 @@
+<template>
+<style>
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:Instrument Serif;src:url("assets/instrument-serif-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:JetBrains Mono;src:url("assets/jetbrains-mono-400.woff2") format("woff2");font-weight:400}
+*{box-sizing:border-box}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;color:#000;font-family:"Instrument Sans",sans-serif;background:transparent}
+.s09-bg{position:absolute;inset:0;background:#fcfcfc}
+.s09-title{position:absolute;left:112px;top:180px;width:680px}
+.s09-eyebrow{margin:0 0 24px;color:#525252;font:600 17px/1.2 "Instrument Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.s09-title h1{margin:0;color:#000;font:400 67px/.98 "Instrument Serif",serif;letter-spacing:-.025em}
+.s09-title h1 em{font-style:italic}
+.s09-summary{position:absolute;left:840px;right:112px;top:175px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+.s09-card{min-height:390px;padding:28px;background:rgba(0,0,0,.02);border:1px solid rgba(0,0,0,.12);border-radius:14px;box-shadow:none}
+.s09-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,.12);font-size:19px;line-height:1.3}
+.s09-badge{flex:0 0 auto;padding:8px 11px;border:1px solid rgba(0,0,0,.12);border-radius:100px;color:#525252;font:400 12px/1 "JetBrains Mono",monospace;letter-spacing:.02em}
+.s09-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:19px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:17px;line-height:1.35}
+.s09-row:last-child{border-bottom:0}
+.s09-row-label{color:#000}
+.s09-row-value{max-width:56%;color:#525252;text-align:right}
+.s09-state{color:#000;font-weight:600;white-space:nowrap}
+.s09-thread{position:absolute;left:112px;top:864px;width:1696px;height:2px;background:rgba(0,0,0,.12)}
+.s09-thread-fill{width:91%;height:100%;background:#000;transform-origin:left center}
+.s09-marker{position:absolute;top:34px;right:44px;color:#525252;font:400 12px/1 "JetBrains Mono",monospace;letter-spacing:.04em}
+</style>
+<div data-hf-id="hf-rg7x" id="root" data-composition-id="09-summary" data-width="1920" data-height="1080" data-duration="5.5">
+  <div data-hf-id="hf-fvhu" id="f-09-summary-background" class="clip s09-bg" data-start="0" data-duration="5.5" data-track-index="0"></div>
+  <div data-hf-id="hf-u7gf" class="s09-title">
+    <p data-hf-id="hf-7jde" class="s09-eyebrow">MISSION SUMMARY · ILLUSTRATIVE</p>
+    <h1 data-hf-id="hf-fps1">Work you can see.<br data-hf-id="hf-x5px"><em data-hf-id="hf-de8m">Control you keep.</em></h1>
+  </div>
+  <div data-hf-id="hf-1sjx" class="s09-summary">
+    <section data-hf-id="hf-vkea" class="s09-card s09-completed" aria-label="Completed work">
+      <div data-hf-id="hf-i37o" class="s09-card-head"><strong data-hf-id="hf-ebyg">Completed work</strong><span data-hf-id="hf-py7g" class="s09-badge">MISSION RECORD</span></div>
+      <div data-hf-id="hf-pphz" class="s09-row s09-done-row"><span data-hf-id="hf-3b7c" class="s09-row-label">Research notes prepared</span><span data-hf-id="hf-g6g5" class="s09-state">Done</span></div>
+      <div data-hf-id="hf-y3br" class="s09-row s09-done-row"><span data-hf-id="hf-irm4" class="s09-row-label">Shortlist saved</span><span data-hf-id="hf-yoe1" class="s09-state">Done</span></div>
+      <div data-hf-id="hf-xp0q" class="s09-row s09-done-row"><span data-hf-id="hf-mgck" class="s09-row-label">Outreach drafts created</span><span data-hf-id="hf-zvb4" class="s09-state">Done</span></div>
+    </section>
+    <section data-hf-id="hf-g3ue" class="s09-card s09-control" aria-label="Controls and next step">
+      <div data-hf-id="hf-jh9o" class="s09-row s09-control-row"><span data-hf-id="hf-i4yw" class="s09-row-label">Next step</span><span data-hf-id="hf-uhtk" class="s09-row-value">Scheduled follow-up</span></div>
+      <div data-hf-id="hf-s3ic" class="s09-row s09-control-row"><span data-hf-id="hf-utbg" class="s09-row-label">Approval</span><span data-hf-id="hf-4obf" class="s09-row-value">Gate recorded</span></div>
+      <div data-hf-id="hf-qwl9" class="s09-row s09-control-row"><span data-hf-id="hf-t136" class="s09-row-label">Budget</span><span data-hf-id="hf-7fxr" class="s09-row-value">Owner-set limit</span></div>
+      <div data-hf-id="hf-rawa" class="s09-row s09-control-row"><span data-hf-id="hf-ysh6" class="s09-row-label">Evidence</span><span data-hf-id="hf-9if5" class="s09-row-value">Action record</span></div>
+    </section>
+  </div>
+  <div data-hf-id="hf-00oi" class="s09-thread" aria-hidden="true"><div data-hf-id="hf-8243" class="s09-thread-fill"></div></div>
+  <div data-hf-id="hf-q4i0" class="s09-marker">ILLUSTRATIVE WORKFLOW</div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script>
+  (function(){
+    const tl=gsap.timeline({paused:true});
+    tl.fromTo(".s09-title",{y:12,opacity:0},{y:0,opacity:1,duration:.46,ease:"power3.out"},0.05);
+    tl.fromTo(".s09-completed",{y:10,opacity:0},{y:0,opacity:1,duration:.42,ease:"power3.out"},0.08);
+    tl.fromTo(".s09-done-row",{y:8,opacity:0},{y:0,opacity:1,duration:.34,ease:"power3.out",stagger:.24},0.48);
+    tl.fromTo(".s09-control",{y:8,opacity:0},{y:0,opacity:1,duration:.38,ease:"power3.out"},1.52);
+    tl.fromTo(".s09-control-row",{y:7,opacity:0},{y:0,opacity:1,duration:.3,ease:"power3.out",stagger:.28},1.92);
+    tl.fromTo(".s09-marker",{opacity:0},{opacity:1,duration:.25,ease:"power3.out"},0.2);
+    window.__timelines=window.__timelines||{};
+    window.__timelines["09-summary"]=tl;
+  })();
+  </script>
+</div>
+</template>

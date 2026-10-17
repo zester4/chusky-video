@@ -1,0 +1,82 @@
+<template>
+<style>
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-700.woff2") format("woff2");font-weight:700}
+@font-face{font-family:Instrument Serif;src:url("assets/instrument-serif-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:JetBrains Mono;src:url("assets/jetbrains-mono-400.woff2") format("woff2");font-weight:400}
+*{box-sizing:border-box}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;color:#000;font-family:Instrument Sans,sans-serif;background:transparent}
+[class~='06-conversation-scene06-bg']{position:absolute;inset:0;background:#fcfcfc}
+[class~='06-conversation-scene06-content']{position:absolute;inset:0;padding:82px 112px 220px}
+[class~='06-conversation-scene06-thread']{position:absolute;left:112px;right:112px;top:863px;height:2px;background:#e5e5e5}
+[class~='06-conversation-scene06-thread-fill']{height:100%;width:61%;background:#000}
+[class~='06-conversation-scene06-marker']{position:absolute;top:34px;right:44px;color:#525252;font:400 12px/1 JetBrains Mono,monospace;letter-spacing:.04em}
+[class~='06-conversation-s6-title']{position:absolute;left:112px;top:180px;width:530px}
+[class~='06-conversation-eyebrow']{margin:0 0 20px;color:#525252;font:600 17px/1.2 Instrument Sans,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+[class~='06-conversation-s6-title'] h1{margin:0;font:400 68px/.98 Instrument Serif,serif;letter-spacing:-.025em}
+[class~='06-conversation-s6-title'] h1 em{font-style:italic}
+[class~='06-conversation-s6-panes']{position:absolute;left:670px;right:112px;top:175px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+[class~='06-conversation-s6-card']{min-height:445px;background:#fff;border:1px solid #e5e5e5;border-radius:16px;padding:28px;box-shadow:0 16px 44px rgba(0,0,0,.035);overflow:hidden}
+[class~='06-conversation-s6-card-head']{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:20px;border-bottom:1px solid #e5e5e5;font-size:18px}
+[class~='06-conversation-s6-badge']{flex:0 0 auto;padding:8px 12px;border:1px solid #e5e5e5;border-radius:999px;color:#525252;font:400 12px/1 JetBrains Mono,monospace;letter-spacing:.02em;white-space:nowrap}
+[class~='06-conversation-s6-call-status']{margin-top:34px;font:400 44px/1.1 Instrument Serif,serif}
+[class~='06-conversation-s6-call-agent']{margin-top:16px;color:#525252;font-size:17px}
+[class~='06-conversation-s6-wave']{display:flex;align-items:center;gap:9px;height:76px;margin:26px 0}
+[class~='06-conversation-s6-wave'] i{width:6px;height:22px;border-radius:5px;background:#000;display:block}
+[class~='06-conversation-s6-wave'] i:nth-child(2n){height:39px;background:#777}
+[class~='06-conversation-s6-wave'] i:nth-child(3n){height:52px}
+[class~='06-conversation-s6-quiet']{margin:0;color:#525252;font-size:17px;line-height:1.45}
+[class~='06-conversation-s6-meeting']{padding-top:24px}
+[class~='06-conversation-s6-meeting-top']{font-size:22px;line-height:1.3}
+[class~='06-conversation-s6-meeting-top'] span{float:right;color:#525252;font:400 12px/1.3 JetBrains Mono,monospace}
+[class~='06-conversation-s6-meeting-note']{display:flex;gap:16px;align-items:center;margin-top:40px;padding:22px;border:1px solid #e5e5e5;border-radius:12px}
+[class~='06-conversation-s6-monogram']{display:grid;place-items:center;flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#000;color:#fff;font:400 20px/1 Instrument Serif,serif}
+[class~='06-conversation-s6-meeting-note'] b{font-weight:600}
+[class~='06-conversation-s6-meeting-note'] p{margin:8px 0 0;color:#525252;line-height:1.4;font-size:16px}
+[class~='06-conversation-s6-meeting-line']{height:8px;width:90%;margin:28px 0 14px;border-radius:4px;background:#eee}
+[class~='06-conversation-s6-short']{width:62%;margin-top:0}
+[class~='06-conversation-s6-meeting-card']{clip-path:inset(0 100% 0 0)}
+[class~='06-conversation-s6-call-details']{clip-path:inset(0 100% 0 0)}
+</style>
+<div data-hf-id="hf-hogj" id="root" data-composition-id="06-conversation" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-uxop" id="f-06-conversation-background" class="clip 06-conversation-scene06-bg" data-start="0" data-duration="8" data-track-index="0"></div>
+  <div data-hf-id="hf-ed8b" class="06-conversation-scene06-content">
+    <div data-hf-id="hf-fhfx" class="06-conversation-s6-title">
+      <p data-hf-id="hf-hy5r" class="06-conversation-eyebrow">SAME MISSION · NEXT STAGE</p>
+      <h1 data-hf-id="hf-u9cj">Calls. Meetings.<br data-hf-id="hf-x5px"><em data-hf-id="hf-ilbb">Same mission.</em></h1>
+    </div>
+    <div data-hf-id="hf-wyx6" class="06-conversation-s6-panes">
+      <div data-hf-id="hf-6r1d" class="06-conversation-s6-card 06-conversation-s6-call-card">
+        <div data-hf-id="hf-xuw2" class="06-conversation-s6-card-head"><strong data-hf-id="hf-i0b2">Call</strong><span data-hf-id="hf-4fqa" class="06-conversation-s6-badge">ILLUSTRATIVE WORKFLOW</span></div>
+        <div data-hf-id="hf-ybos" class="06-conversation-s6-call-details">
+          <div data-hf-id="hf-i746" class="06-conversation-s6-call-status">Call in progress</div>
+          <div data-hf-id="hf-wqbr" class="06-conversation-s6-call-agent">Chusky · AI assistant</div>
+          <div data-hf-id="hf-39h5" class="06-conversation-s6-wave" aria-hidden="true"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i><i data-hf-id="hf-ylp6"></i><i data-hf-id="hf-0l8b"></i><i data-hf-id="hf-0zjc"></i><i data-hf-id="hf-zsm9"></i><i data-hf-id="hf-06xa"></i><i data-hf-id="hf-26gf"></i><i data-hf-id="hf-2krg"></i><i data-hf-id="hf-oz7w"></i><i data-hf-id="hf-okwv"></i><i data-hf-id="hf-o6lu"></i></div>
+          <p data-hf-id="hf-iwp0" class="06-conversation-s6-quiet">The conversation can continue by phone.</p>
+        </div>
+      </div>
+      <div data-hf-id="hf-kwvw" class="06-conversation-s6-card 06-conversation-s6-meeting-card">
+        <div data-hf-id="hf-tmdi" class="06-conversation-s6-card-head"><strong data-hf-id="hf-c7fz">Meeting</strong><span data-hf-id="hf-1j7g" class="06-conversation-s6-badge">AI PARTICIPANT</span></div>
+        <div data-hf-id="hf-mnnc" class="06-conversation-s6-meeting">
+          <div data-hf-id="hf-j0yd" class="06-conversation-s6-meeting-top">Product fit conversation <span data-hf-id="hf-7vxj">Illustrative</span></div>
+          <div data-hf-id="hf-r36t" class="06-conversation-s6-meeting-note"><div data-hf-id="hf-del7" class="06-conversation-s6-monogram" aria-hidden="true">C</div><div data-hf-id="hf-yeow"><b data-hf-id="hf-imo3">Chusky · AI assistant</b><p data-hf-id="hf-jwna">Present, disclosed, and participating in the discussion.</p></div></div>
+          <div data-hf-id="hf-kws7" class="06-conversation-s6-meeting-line"></div><div data-hf-id="hf-jj00" class="06-conversation-s6-meeting-line 06-conversation-s6-short"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-hf-id="hf-ah01" class="06-conversation-scene06-thread" aria-hidden="true"><div data-hf-id="hf-ykiu" class="06-conversation-scene06-thread-fill"></div></div>
+  <div data-hf-id="hf-jkft" class="06-conversation-scene06-marker">ILLUSTRATIVE WORKFLOW</div>
+  <script>
+    const tl = gsap.timeline({paused:true});
+    window.__timelines["06-conversation"] = tl;
+    tl.fromTo("[class~='06-conversation-s6-title']", {y:12,opacity:0}, {y:0,opacity:1,duration:0.56,ease:"power3.out"}, 0.06);
+    tl.fromTo("[class~='06-conversation-s6-call-card']", {x:18,opacity:0}, {x:0,opacity:1,duration:0.52,ease:"power3.out"}, 0.18);
+    tl.fromTo("[class~='06-conversation-s6-call-details']", {clipPath:"inset(0 100% 0 0)"}, {clipPath:"inset(0 0% 0 0)",duration:0.72,ease:"power3.inOut"}, 1.34);
+    tl.fromTo("[class~='06-conversation-s6-meeting-card']", {clipPath:"inset(0 100% 0 0)"}, {clipPath:"inset(0 0% 0 0)",duration:0.82,ease:"power3.inOut"}, 3.84);
+    tl.fromTo("[class~='06-conversation-s6-meeting-note']", {y:10,opacity:0}, {y:0,opacity:1,duration:0.48,ease:"power3.out"}, 4.32);
+    tl.fromTo("[class~='06-conversation-s6-meeting-line']", {scaleX:0,transformOrigin:"left center"}, {scaleX:1,duration:0.5,ease:"power3.out",stagger:0.14}, 5.36);
+  </script>
+</div>
+</template>

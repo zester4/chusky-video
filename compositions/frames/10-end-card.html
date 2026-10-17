@@ -1,0 +1,37 @@
+<template>
+  <style>
+    @font-face{font-family:"Instrument Sans";src:url("assets/instrument-sans-400.woff2") format("woff2");font-style:normal;font-weight:400}
+    @font-face{font-family:"Instrument Sans";src:url("assets/instrument-sans-600.woff2") format("woff2");font-style:normal;font-weight:600}
+    @font-face{font-family:"Instrument Serif";src:url("assets/instrument-serif-400.woff2") format("woff2");font-style:normal;font-weight:400}
+    @font-face{font-family:"JetBrains Mono";src:url("assets/jetbrains-mono-400.woff2") format("woff2");font-style:normal;font-weight:400}
+    *{box-sizing:border-box}
+    #root{position:relative;width:1920px;height:1080px;overflow:hidden;color:#000;font-family:"Instrument Sans",sans-serif;background:transparent}
+    [class~="10-end-card-ground"]{position:absolute;inset:0;background:#fcfcfc}
+    [class~="10-end-card-lockup"]{position:absolute;inset:120px 112px 232px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+    [class~="10-end-card-mark-window"]{display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:34px;clip-path:inset(0 100% 0 0)}
+    [class~="10-end-card-mark"]{display:block;width:400px;height:auto}
+    [class~="10-end-card-title"]{margin:0;font:400 76px/1.04 "Instrument Serif",serif;letter-spacing:-.02em;color:#000}
+    [class~="10-end-card-cta"]{margin-top:30px;padding:16px 27px;border-radius:100px;background:#000;color:#fcfcfc;font:600 17px/1 "Instrument Sans",sans-serif}
+    [class~="10-end-card-rule-track"]{position:absolute;left:112px;right:112px;top:864px;height:2px;background:rgba(0,0,0,.12)}
+    [class~="10-end-card-rule-fill"]{display:block;width:100%;height:100%;background:#000;transform-origin:left center;transform:scaleX(0)}
+    [class~="10-end-card-label"]{position:absolute;top:34px;right:44px;margin:0;color:#525252;font:400 12px/1 "JetBrains Mono",monospace;letter-spacing:.04em}
+  </style>
+  <div data-hf-id="hf-tqsr" id="root" data-composition-id="10-end-card" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-oi67" id="f-10-end-card-background" class="clip 10-end-card-ground" data-start="0" data-duration="5" data-track-index="0"></div>
+    <div data-hf-id="hf-203p" class="10-end-card-lockup">
+      <div data-hf-id="hf-jn2d" class="10-end-card-mark-window"><img data-hf-id="hf-p1rs" class="10-end-card-mark" src="assets/chusky-wordmark.png" alt="Official Chusky wordmark"></div>
+      <h1 data-hf-id="hf-aa8f" class="10-end-card-title">Give Chusky the goal.</h1>
+      <div data-hf-id="hf-zuer" class="10-end-card-cta">Book a pilot.</div>
+    </div>
+    <div data-hf-id="hf-ab2y" class="10-end-card-rule-track" aria-hidden="true"><span data-hf-id="hf-j63a" class="10-end-card-rule-fill"></span></div>
+    <p data-hf-id="hf-teqd" class="10-end-card-label">ILLUSTRATIVE WORKFLOW</p>
+    <script>
+      const tl=gsap.timeline({paused:true});
+      window.__timelines["10-end-card"]=tl;
+      tl.fromTo('[class~="10-end-card-mark-window"]',{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:0.92,ease:"power3.out"},0.12);
+      tl.fromTo('[class~="10-end-card-rule-fill"]',{scaleX:0},{scaleX:1,duration:1.32,ease:"power3.out"},0.18);
+      tl.fromTo('[class~="10-end-card-title"]',{autoAlpha:0,y:14},{autoAlpha:1,y:0,duration:0.62,ease:"power3.out"},1.6);
+      tl.fromTo('[class~="10-end-card-cta"]',{autoAlpha:0,y:10},{autoAlpha:1,y:0,duration:0.55,ease:"power3.out"},3.2);
+    </script>
+  </div>
+</template>

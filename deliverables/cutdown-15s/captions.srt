@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:02,048
+One message starts the mission.
+
+2
+00:00:02,350 --> 00:00:04,249
+Research builds a shortlist.
+
+3
+00:00:04,850 --> 00:00:06,834
+You approve before outreach.
+
+4
+00:00:07,250 --> 00:00:09,575
+Calls. Meetings. Work continues.
+
+5
+00:00:09,650 --> 00:00:11,229
+Tomorrow, it resumes.
+
+6
+00:00:11,900 --> 00:00:13,671
+Chusky. You keep control.
+

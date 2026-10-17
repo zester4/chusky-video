@@ -1,0 +1,75 @@
+<template>
+<style>
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-600.woff2") format("woff2");font-weight:600}
+@font-face{font-family:Instrument Sans;src:url("assets/instrument-sans-700.woff2") format("woff2");font-weight:700}
+@font-face{font-family:Instrument Serif;src:url("assets/instrument-serif-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:JetBrains Mono;src:url("assets/jetbrains-mono-400.woff2") format("woff2");font-weight:400}
+*{box-sizing:border-box}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;color:#000;font-family:Instrument Sans,sans-serif;background:transparent}
+#root .scene04-bg{position:absolute;inset:0;background:#fcfcfc}
+#root .scene04-content{position:absolute;inset:0;padding:82px 112px 220px}
+#root .scene04-title{position:absolute;left:112px;top:195px;width:520px}
+#root .scene04-eyebrow{margin:0 0 20px;color:#525252;font:600 17px/1.2 Instrument Sans,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+#root .scene04-title h1{margin:0;font:400 76px/.98 Instrument Serif,serif;letter-spacing:-.025em}
+#root .scene04-title h1 em{font-style:italic}
+#root .scene04-grid{position:absolute;left:670px;right:112px;top:190px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+#root .scene04-card{background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:14px;padding:28px;box-shadow:none;min-height:440px}
+#root .scene04-card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,.12);font-size:18px}
+#root .scene04-badge{flex:0 0 auto;padding:8px 12px;border:1px solid rgba(0,0,0,.12);border-radius:999px;color:#525252;font:400 12px/1 JetBrains Mono,monospace;letter-spacing:.02em;white-space:nowrap}
+#root .scene04-muted{color:#525252;font-size:15px;line-height:1.5}
+#root .scene04-save-state{display:flex;align-items:center;gap:9px;margin:18px 0 0;color:#525252;font-size:15px}
+#root .scene04-check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid rgba(0,0,0,.22);border-radius:50%;font-size:13px;color:#000}
+#root .scene04-row{padding:17px 0;border-top:1px solid rgba(0,0,0,.08);font-size:16px;line-height:1.35}
+#root .scene04-row span{float:right;color:#525252}
+#root .scene04-draft{position:relative;margin-top:19px;padding:17px;border:1px solid rgba(0,0,0,.12);border-radius:10px;background:#fcfcfc}
+#root .scene04-draft-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#525252;font:400 12px/1.3 JetBrains Mono,monospace;letter-spacing:.02em}
+#root .scene04-draft-copy{margin:12px 0 0;color:#333;font-size:15px;line-height:1.45}
+#root .scene04-unsent{color:#525252}
+#root .scene04-thread{position:absolute;left:112px;top:864px;width:1696px;height:2px;background:rgba(0,0,0,.12)}
+#root .scene04-thread-fill{height:100%;width:40%;background:#000}
+#root .scene04-marker{position:absolute;top:34px;right:44px;color:#525252;font:400 12px/1 JetBrains Mono,monospace;letter-spacing:.04em}
+</style>
+<div data-hf-id="hf-b9z1" id="root" data-composition-id="04-saved-work" data-width="1920" data-height="1080">
+  <div data-hf-id="hf-n259" id="background-04-saved-work" class="clip scene04-bg" data-start="0" data-duration="6" data-track-index="0"></div>
+  <div data-hf-id="hf-3kcs" class="scene04-content">
+    <div data-hf-id="hf-4ild" class="scene04-title">
+      <p data-hf-id="hf-wxta" class="scene04-eyebrow">RESEARCH → CONNECTED WORKSPACE</p>
+      <h1 data-hf-id="hf-tll6">Saved where<br data-hf-id="hf-x5px"><em data-hf-id="hf-609v">you work.</em></h1>
+    </div>
+    <div data-hf-id="hf-hj9p" class="scene04-grid">
+      <div data-hf-id="hf-nf7z" class="scene04-card scene04-list-card">
+        <div data-hf-id="hf-drue" class="scene04-card-head"><strong data-hf-id="hf-kqs2">Prospect list</strong><span data-hf-id="hf-vpmk" class="scene04-badge">ILLUSTRATIVE WORKFLOW</span></div>
+        <div data-hf-id="hf-rjny" class="scene04-save-state"><span data-hf-id="hf-m20t" class="scene04-check">✓</span><span data-hf-id="hf-bteo">Saved to a connected workspace</span></div>
+        <div data-hf-id="hf-jc12" class="scene04-row">Prospect 01 <span data-hf-id="hf-c6i3">Company A</span></div>
+        <div data-hf-id="hf-jqc3" class="scene04-row">Prospect 02 <span data-hf-id="hf-bs72">Company B</span></div>
+        <div data-hf-id="hf-k4n4" class="scene04-row">Prospect 03 <span data-hf-id="hf-bdw1">Company C</span></div>
+      </div>
+      <div data-hf-id="hf-i0vr" class="scene04-card scene04-drafts-card">
+        <div data-hf-id="hf-s3a2" class="scene04-card-head"><strong data-hf-id="hf-neid">Personalized outreach drafts</strong><span data-hf-id="hf-8dtk" class="scene04-badge">UNSENT</span></div>
+        <div data-hf-id="hf-01g2" class="scene04-draft">
+          <div data-hf-id="hf-xplo" class="scene04-draft-meta"><span data-hf-id="hf-nvqq">TO · PROSPECT 01</span><span data-hf-id="hf-dmvq" class="scene04-unsent">DRAFT</span></div>
+          <p data-hf-id="hf-u50b" class="scene04-draft-copy">Noticed your team is expanding work in this category…</p>
+        </div>
+        <div data-hf-id="hf-ltw6" class="scene04-draft">
+          <div data-hf-id="hf-c6ac" class="scene04-draft-meta"><span data-hf-id="hf-oa1r">TO · PROSPECT 02</span><span data-hf-id="hf-uv3u" class="scene04-unsent">DRAFT</span></div>
+          <p data-hf-id="hf-wbw6" class="scene04-draft-copy">Thought this might be relevant to your recent focus…</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-hf-id="hf-dq2h" class="scene04-thread"><div data-hf-id="hf-edid" class="scene04-thread-fill"></div></div>
+  <div data-hf-id="hf-9deu" class="scene04-marker">ILLUSTRATIVE WORKFLOW</div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    window.__timelines["04-saved-work"] = tl;
+    tl.fromTo(".scene04-title", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.48, ease: "power3.out" }, 0.02);
+    tl.fromTo(".scene04-list-card", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.46, ease: "power3.out" }, 0.18);
+    tl.fromTo(".scene04-save-state", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.38, ease: "power3.out" }, 0.66);
+    tl.fromTo(".scene04-row", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.36, stagger: 0.27, ease: "power3.out" }, 0.82);
+    tl.fromTo(".scene04-drafts-card", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.42, ease: "power3.out" }, 1.72);
+    tl.fromTo(".scene04-draft", { opacity: 0, y: 12, scale: 0.985, transformOrigin: "50% 50%" }, { opacity: 1, y: 0, scale: 1, duration: 0.42, stagger: 1.08, ease: "power3.out" }, 2.12);
+    tl.fromTo(".scene04-thread-fill", { scaleX: 0.97, transformOrigin: "left center" }, { scaleX: 1, duration: 1.1, ease: "power3.out" }, 4.62);
+  </script>
+</div>
+</template>

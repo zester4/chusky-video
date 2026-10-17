@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Chusky launch — style frame preview</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Instrument Sans"; src: url("assets/instrument-sans-400.woff2") format("woff2"); font-weight: 400; font-display: block; }
+      @font-face { font-family: "Instrument Sans"; src: url("assets/instrument-sans-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+      @font-face { font-family: "Instrument Sans"; src: url("assets/instrument-sans-700.woff2") format("woff2"); font-weight: 700; font-display: block; }
+      @font-face { font-family: "Instrument Serif"; src: url("assets/instrument-serif-400.woff2") format("woff2"); font-weight: 400; font-display: block; }
+      @font-face { font-family: "JetBrains Mono"; src: url("assets/jetbrains-mono-400.woff2") format("woff2"); font-weight: 400; font-display: block; }
+      :root { --paper:#fcfcfc; --surface:#fff; --ink:#000; --muted:#525252; --line:#e5e5e5; --soft:#f6f6f6; }
+      * { box-sizing: border-box; }
+      html, body { margin:0; width:1920px; height:1080px; overflow:hidden; background:var(--paper); color:var(--ink); }
+      body { font-family:"Instrument Sans", sans-serif; }
+      #root { position:relative; width:1920px; height:1080px; overflow:hidden; background:var(--paper); }
+      .shot { position:absolute; inset:0; padding:80px 112px; }
+      .topline { display:flex; justify-content:space-between; align-items:center; font:600 16px/1 "Instrument Sans", sans-serif; letter-spacing:.09em; text-transform:uppercase; }
+      .topline .right { color:var(--muted); font:400 14px/1 "JetBrains Mono", monospace; letter-spacing:.02em; }
+      .eyebrow { color:var(--muted); font:600 16px/1.2 "Instrument Sans", sans-serif; letter-spacing:.08em; text-transform:uppercase; }
+      .headline { margin:22px 0 0; font:400 72px/.98 "Instrument Serif", serif; letter-spacing:-.025em; }
+      .headline em { font-style:italic; }
+      .hairline { height:1px; background:var(--line); }
+      .frame-label { position:absolute; left:112px; bottom:72px; color:#000; font:400 13px/1 "JetBrains Mono", monospace; letter-spacing:.02em; }
+      .mission-thread { position:absolute; left:112px; right:112px; bottom:112px; height:2px; background:var(--line); }
+      .mission-thread .fill { height:100%; width:18%; background:var(--ink); }
+      .request-layout { display:grid; grid-template-columns: 660px 1fr; gap:96px; margin-top:78px; align-items:center; }
+      .request-copy .headline { max-width:620px; }
+      .request-copy p { margin:26px 0 0; max-width:430px; color:var(--muted); font-size:22px; line-height:1.5; }
+      .chat { width:760px; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:28px; box-shadow:0 20px 60px rgba(0,0,0,.035); }
+      .chat-head { display:flex; align-items:center; justify-content:space-between; padding-bottom:22px; border-bottom:1px solid var(--line); }
+      .chat-title { font-size:18px; font-weight:600; }
+      .chip { border:1px solid var(--line); border-radius:999px; padding:9px 13px; color:var(--muted); font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+      .message { margin:28px 0 22px auto; width:80%; padding:22px 24px; border-radius:14px; background:#f5f5f5; font-size:22px; line-height:1.45; }
+      .inputbar { display:flex; align-items:center; gap:16px; border:1px solid var(--line); border-radius:999px; padding:15px 18px 15px 22px; color:#666; font-size:16px; }
+      .send { margin-left:auto; width:38px; height:38px; display:grid; place-items:center; border-radius:50%; background:var(--ink); color:white; font-size:18px; }
+      .request-meta { display:flex; align-items:center; gap:10px; color:var(--muted); font-size:13px; }
+      .dot { width:7px; height:7px; background:var(--ink); border-radius:50%; }
+      .research-layout { display:grid; grid-template-columns: 570px 1fr; gap:54px; margin-top:56px; }
+      .research-lead .headline { max-width:540px; font-size:68px; }
+      .research-lead .sub { margin-top:24px; color:var(--muted); font-size:21px; line-height:1.5; }
+      .browser { overflow:hidden; background:white; border:1px solid var(--line); border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,.035); }
+      .browser-bar { display:flex; align-items:center; gap:8px; padding:15px 18px; border-bottom:1px solid var(--line); color:var(--muted); font:12px "JetBrains Mono",monospace; }
+      .browser-dot { width:8px;height:8px;border-radius:50%;background:#d7d7d7; }
+      .address { margin-left:10px; padding:8px 12px; background:#f6f6f6; border-radius:6px; }
+      .browser-body { display:grid; grid-template-columns: 42% 58%; min-height:455px; }
+      .research-note { padding:26px; border-right:1px solid var(--line); }
+      .research-note h3 { margin:0 0 18px; font-size:15px; font-weight:600; }
+      .note-line { height:8px; margin:13px 0; border-radius:4px; background:#ededed; }
+      .note-line.short { width:66%; }
+      .note-box { margin-top:26px; padding:16px; border:1px solid var(--line); border-radius:10px; color:var(--muted); font-size:14px; line-height:1.45; }
+      .list { padding:24px; }
+      .list-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:17px; font-size:15px; font-weight:600; }
+      .row { display:grid; grid-template-columns: 38px 1fr 142px; align-items:center; gap:12px; padding:16px 0; border-top:1px solid #eee; }
+      .avatar { display:grid; place-items:center; width:34px;height:34px;border-radius:50%;background:#f1f1f1;color:#555;font-size:12px; }
+      .person { font-size:15px; font-weight:600; }
+      .company { margin-top:4px; color:var(--muted); font-size:12px; }
+      .fit { color:#555; font-size:12px; text-align:right; }
+      .fit span { display:block; margin-top:4px; color:#666; font:11px "JetBrains Mono",monospace; }
+      .end { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+      .end .brand { width:380px; height:auto; margin-bottom:38px; }
+      .end .headline { margin:0; font-size:78px; }
+      .end .cta { display:inline-flex; align-items:center; justify-content:center; margin-top:34px; padding:16px 26px; min-width:198px; border-radius:999px; background:#000; color:#fff; font-size:17px; font-weight:600; }
+      .end .note { position:absolute; bottom:66px; color:var(--muted); font:12px "JetBrains Mono",monospace; }
+      .watermark { position:absolute; top:32px; right:44px; color:#666; font:12px "JetBrains Mono",monospace; letter-spacing:.04em; }
+    </style>
+  </head>
+  <body>
+    <main data-hf-id="hf-pn36" id="root" data-composition-id="main" data-start="0" data-duration="8" data-width="1920" data-height="1080">
+      <section data-hf-id="hf-vanb" id="request" class="shot clip" data-start="0" data-duration="2.8" data-track-index="0">
+        <div data-hf-id="hf-o5lv" class="topline"><span data-hf-id="hf-ufip">CHUSKY · ONE MISSION</span><span data-hf-id="hf-osk0" class="right">STYLE FRAME 01 / 03</span></div>
+        <div data-hf-id="hf-ezeu" class="request-layout">
+          <div data-hf-id="hf-nnkr" class="request-copy">
+            <div data-hf-id="hf-jngw" class="eyebrow">A clear goal, in one message</div>
+            <h1 data-hf-id="hf-jwhn" class="headline">The work starts<br data-hf-id="hf-x5px"><em data-hf-id="hf-k06v">with your words.</em></h1>
+            <p data-hf-id="hf-d5yo">One general-purpose worker takes the task and carries it forward.</p>
+          </div>
+          <div data-hf-id="hf-vshe" class="chat">
+            <div data-hf-id="hf-f2l9" class="chat-head"><span data-hf-id="hf-e3rb" class="chat-title">New conversation</span><span data-hf-id="hf-8u7e" class="chip">Illustrative workflow</span></div>
+            <div data-hf-id="hf-oaov" class="message">Find 20 good-fit prospects for our new app. Prepare the outreach.</div>
+            <div data-hf-id="hf-6clv" class="request-meta"><span data-hf-id="hf-9gry" class="dot"></span><span data-hf-id="hf-47jn">Goal received · mission taking shape</span></div>
+            <div data-hf-id="hf-dsnq" style="height:22px"></div>
+            <div data-hf-id="hf-1for" class="inputbar"><span data-hf-id="hf-81x3">Message Chusky…</span><span data-hf-id="hf-b912" class="send">↑</span></div>
+          </div>
+        </div>
+        <div data-hf-id="hf-zspj" class="mission-thread"><div data-hf-id="hf-4qej" class="fill"></div></div>
+        <div data-hf-id="hf-d8zk" class="frame-label">REQUEST · 00:00</div><div data-hf-id="hf-http" class="watermark">ILLUSTRATIVE WORKFLOW</div>
+      </section>
+      <section data-hf-id="hf-qzej" id="research" class="shot clip" data-start="3" data-duration="2.8" data-track-index="1">
+        <div data-hf-id="hf-pz6r" class="topline"><span data-hf-id="hf-n21h">CHUSKY · SAME MISSION</span><span data-hf-id="hf-bbe7" class="right">STYLE FRAME 02 / 03</span></div>
+        <div data-hf-id="hf-iwyq" class="research-layout">
+          <div data-hf-id="hf-oam2" class="research-lead">
+            <div data-hf-id="hf-d7yf" class="eyebrow">Research moves into useful work</div>
+            <h2 data-hf-id="hf-lxjx" class="headline">Find.<br data-hf-id="hf-rsrt">Qualify.<br data-hf-id="hf-szow"><em data-hf-id="hf-q2zk">Enrich.</em></h2>
+            <div data-hf-id="hf-3lka" class="sub">A browser research pass becomes a shortlist with clear, generic fit notes.</div>
+          </div>
+          <div data-hf-id="hf-i7so" class="browser">
+            <div data-hf-id="hf-80ig" class="browser-bar"><i data-hf-id="hf-d6ya" class="browser-dot"></i><i data-hf-id="hf-odva" class="browser-dot"></i><i data-hf-id="hf-os6b" class="browser-dot"></i><span data-hf-id="hf-2a53" class="address">Illustrative research workspace</span><span data-hf-id="hf-8ctx" style="margin-left:auto">READ ONLY · DEMO</span></div>
+            <div data-hf-id="hf-nizx" class="browser-body">
+              <div data-hf-id="hf-i2ck" class="research-note">
+                <h3 data-hf-id="hf-kw6g">Research notes</h3>
+                <div data-hf-id="hf-ucyr" class="note-line"></div><div data-hf-id="hf-36zd" class="note-line short"></div><div data-hf-id="hf-865f" class="note-line"></div>
+                <div data-hf-id="hf-mhxs" class="note-box">Fit signals<br data-hf-id="hf-sldv"><br data-hf-id="hf-qluq">• Relevant product category<br data-hf-id="hf-q7jp">• Team size appears suitable<br data-hf-id="hf-regs">• Public business context reviewed</div>
+              </div>
+              <div data-hf-id="hf-33o8" class="list">
+                <div data-hf-id="hf-7jid" class="list-title"><span data-hf-id="hf-taf8">Shortlist · illustrative records</span><span data-hf-id="hf-evez" class="chip">3 examples</span></div>
+                <div data-hf-id="hf-thy4" class="row"><div data-hf-id="hf-03o0" class="avatar">01</div><div data-hf-id="hf-yeow"><div data-hf-id="hf-26n6" class="person">Prospect 01</div><div data-hf-id="hf-2g13" class="company">Company A · sample organization</div></div><div data-hf-id="hf-s20v" class="fit">Good fit<span data-hf-id="hf-cnd0">REVIEWED</span></div></div>
+                <div data-hf-id="hf-lt04" class="row"><div data-hf-id="hf-ywqx" class="avatar">02</div><div data-hf-id="hf-y7yw"><div data-hf-id="hf-2ky7" class="person">Prospect 02</div><div data-hf-id="hf-vvpy" class="company">Company B · sample organization</div></div><div data-hf-id="hf-d1p9" class="fit">Possible fit<span data-hf-id="hf-mjcs">REVIEWED</span></div></div>
+                <div data-hf-id="hf-km31" class="row"><div data-hf-id="hf-zb1y" class="avatar">03</div><div data-hf-id="hf-x11t"><div data-hf-id="hf-2z98" class="person">Prospect 03</div><div data-hf-id="hf-hlqx" class="company">Company C · sample organization</div></div><div data-hf-id="hf-e8u7" class="fit">Good fit<span data-hf-id="hf-lcfp">REVIEWED</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-hf-id="hf-ois7" class="mission-thread"><div data-hf-id="hf-hiky" class="fill" style="width:42%"></div></div>
+        <div data-hf-id="hf-30bg" class="frame-label">RESEARCH · 00:09 · SAMPLE RECORDS ONLY</div><div data-hf-id="hf-fn81" class="watermark">ILLUSTRATIVE WORKFLOW</div>
+      </section>
+      <section data-hf-id="hf-iodm" id="end" class="shot end clip" data-start="6" data-duration="2" data-track-index="2">
+        <img data-hf-id="hf-3xez" class="brand" src="assets/chusky-wordmark.png" alt="Official Chusky wordmark" />
+        <h2 data-hf-id="hf-nvf9" class="headline">Give Chusky the goal.</h2>
+        <div data-hf-id="hf-i8wu" class="cta">Book a pilot</div>
+        <div data-hf-id="hf-sbsj" class="note">One message. The work keeps moving.</div>
+      </section>
+    </main>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
