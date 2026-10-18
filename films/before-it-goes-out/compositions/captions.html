@@ -1,0 +1,224 @@
+<template id="captions-template" data-composition-id="captions" data-width="1920" data-height="1080">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+
+
+<style data-brand-tokens>
+      @font-face { font-family: 'Instrument Serif'; src: url('assets/fonts/instrument-serif-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-600.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: block; }
+      @font-face { font-family: 'Instrument Sans'; src: url('assets/fonts/instrument-sans-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: block; }
+      :root {
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #DADADA;
+      --text-primary: #000000;
+      --text-secondary: #5A5A5A;
+      --accent: #E5E5E5;
+      --line: #FCFCFC;
+      --white-overlay: rgba(255,255,255,0.3);
+      --cap-ink: #000000;
+      --cap-canvas: #FFFFFF;
+      --cap-accent: #DADADA;
+      --cap-accent-2: #5A5A5A;
+      --font-display: "Instrument Serif", system-ui, serif;
+      --font-body: "Instrument Sans", system-ui, sans-serif;
+      --cap-band-top: 900px;
+      --cap-band-height: 180px;
+      }
+    </style>
+
+<style>
+  #captions-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .caption-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  /* the keep-out band, from captionBand(H) — frame content stays above it */
+  .caption-stage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--cap-band-top, 900px);
+    height: var(--cap-band-height, 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .caption-group {
+    /* every group is absolutely stacked over the SAME band — exactly one shown at a
+       time via opacity. Must be absolute: in-flow groups would lay out side-by-side. */
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  /* THE stone card — single 1px taupe hairline border (cartesian's universal
+     structural device), SHARP corners, ZERO shadow, ZERO fill beyond the stone canvas */
+  .caption-pill {
+    max-width: 88%;
+    padding: 10px 24px 12px;
+    background: var(--cap-canvas, #ede8e0);
+    border: 1px solid var(--cap-accent-2, #b8b0a4);
+    border-radius: 0;
+  }
+  .caption-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.1em 0.34em;
+    font-family: "Instrument Sans", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(26px, 1.55vw, 30px);
+    line-height: 1.24;
+    letter-spacing: 0;
+  }
+
+  /* upcoming — faint ink, no mark */
+  .caption-word {
+    display: inline-block;
+    padding: 0 0.06em;
+    border-bottom: 1px solid transparent;
+    color: color-mix(in srgb, var(--cap-ink, #1a1a1a) 42%, var(--cap-canvas, #ede8e0));
+  }
+  /* current word — a QUIET marker: a faint warm-stone wash behind solid ink, plus a
+     1px taupe hairline underline (restraint, not a loud block; SHARP, NO shadow) */
+  .caption-word.is-active {
+    color: var(--cap-ink, #1a1a1a);
+    background: color-mix(in srgb, var(--cap-accent, #8a8178) 18%, var(--cap-canvas, #ede8e0));
+    border-bottom: 1px solid var(--cap-accent, #8a8178);
+  }
+  /* already spoken — solid ink, wash + underline cleared */
+  .caption-word.is-spoken {
+    color: var(--cap-ink, #1a1a1a);
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
+
+  /* optional per-word accents (dormant until a word-classer tags them) */
+  /* brand / key term — Instrument Serif italic, cartesian's only display inflection */
+  .caption-word.cap-brand {
+    font-style: italic;
+  }
+  /* numerals / data — the body sans voice, slightly recessed */
+  .caption-word.cap-num {
+    font-family: "Instrument Sans", ui-sans-serif, sans-serif;
+    color: color-mix(in srgb, var(--cap-ink, #1a1a1a) 72%, var(--cap-canvas, #ede8e0));
+  }
+  /* emphasis — a 1px taupe hairline underline (no second color; stone-and-ink only) */
+  .caption-word.cap-cta {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--cap-accent, #8a8178);
+    text-underline-offset: 0.12em;
+  }
+
+  @media (max-aspect-ratio: 9/16) {
+    .caption-pill {
+      max-width: 94%;
+    }
+    .caption-line {
+      font-size: clamp(26px, 3vw, 30px);
+    }
+  }
+</style>
+
+<div data-hf-id="hf-3oh1"
+  id="captions-root"
+  data-composition-id="captions"
+  data-timeline-locked
+  data-start="0"
+  data-duration="90"
+  data-fps="30"
+  data-width="1920"
+  data-height="1080"
+>
+  <div data-hf-id="hf-9flp" class="caption-layer" aria-hidden="true">
+    <div data-hf-id="hf-ajrg" id="caption-stage" class="caption-stage"></div>
+  </div>
+</div>
+
+<script>
+  // captions.mjs injects the engine's scene-aware groups + real duration here.
+  var GROUPS = [{"id":"caption-group-0","frame":1,"start":0,"end":8.035,"text":"You give Chusky a goal. It can begin the research, gather the evidence, and bring the work back to you in a form you can review.","words":[{"id":"caption-word-0-0","text":"You give Chusky a goal. It can begin the research, gather the evidence, and bring the work back to you in a form you can review.","start":0,"end":7.915}]},{"id":"caption-group-1","frame":2,"start":11,"end":20.443,"text":"It starts by looking for people who fit the brief, then checks the reasons behind each match. The list is built from the research, not guesswork.","words":[{"id":"caption-word-1-0","text":"It starts by looking for people who fit the brief, then checks the reasons behind each match. The list is built from the research, not guesswork.","start":11,"end":20.323}]},{"id":"caption-group-2","frame":3,"start":22,"end":32.381,"text":"Each entry gets the useful context: what the company does, why it may fit, and what still needs your judgment. The sources stay close to the work.","words":[{"id":"caption-word-2-0","text":"Each entry gets the useful context: what the company does, why it may fit, and what still needs your judgment. The sources stay close to the work.","start":22,"end":32.261}]},{"id":"caption-group-3","frame":4,"start":34,"end":44.509,"text":"From there, Chusky prepares a first message for each person, using the details it found. The drafts are saved in the workspace your team already uses.","words":[{"id":"caption-word-3-0","text":"From there, Chusky prepares a first message for each person, using the details it found. The drafts are saved in the workspace your team already uses.","start":34,"end":44.389}]},{"id":"caption-group-4","frame":5,"start":45,"end":52.373,"text":"And then it pauses. The messages are ready, but this mission is waiting for your approval before anything is sent.","words":[{"id":"caption-word-4-0","text":"And then it pauses. The messages are ready, but this mission is waiting for your approval before anything is sent.","start":45,"end":52.253}]},{"id":"caption-group-5","frame":6,"start":57,"end":66.016,"text":"You can review each draft, make changes, approve the next step, or hold the work. Chusky keeps that decision attached to the mission.","words":[{"id":"caption-word-5-0","text":"You can review each draft, make changes, approve the next step, or hold the work. Chusky keeps that decision attached to the mission.","start":57,"end":65.896}]},{"id":"caption-group-6","frame":7,"start":68,"end":78.36,"text":"Once approved, the follow-up can be scheduled. The record shows what was prepared, what you authorized, when the next step is due, and the evidence behind it.","words":[{"id":"caption-word-6-0","text":"Once approved, the follow-up can be scheduled. The record shows what was prepared, what you authorized, when the next step is due, and the evidence behind it.","start":68,"end":78.24}]},{"id":"caption-group-7","frame":8,"start":79,"end":85.733,"text":"Your team stays in control while the work keeps moving. Chusky. Give it the goal. Keep your authority.","words":[{"id":"caption-word-7-0","text":"Your team stays in control while the work keeps moving. Chusky. Give it the goal. Keep your authority.","start":79,"end":85.613}]}];
+  var DURATION = 90;
+
+  (function () {
+    var stage = document.getElementById("caption-stage");
+
+    // build DOM: one .caption-group per group, .caption-word per word
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.createElement("div");
+      groupEl.className = "caption-group";
+      groupEl.id = "caption-group-" + g;
+      var pill = document.createElement("div");
+      pill.className = "caption-pill";
+      var line = document.createElement("div");
+      line.className = "caption-line";
+      (group.words || []).forEach(function (w, i) {
+        var span = document.createElement("span");
+        span.className = "caption-word";
+        span.id = "caption-word-" + g + "-" + i;
+        span.textContent = String(w.text);
+        line.appendChild(span);
+      });
+      pill.appendChild(line);
+      groupEl.appendChild(pill);
+      stage.appendChild(groupEl);
+    });
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.getElementById("caption-group-" + g);
+      var words = group.words || [];
+      var next = GROUPS[g + 1];
+      var isLast = g === GROUPS.length - 1;
+      var start = Math.max(0, Number(group.start));
+      var end = isLast ? DURATION : Math.min(Number(next.start), Number(group.end) + 0.3);
+      if (end <= start) end = start + 0.01;
+
+      // group on/off — exactly one group visible at a time
+      tl.set(groupEl, { opacity: 1 }, start);
+      tl.set(groupEl, { opacity: 0 }, end);
+
+      // 3-state karaoke via className SETS — seek-safe (gsap.set applies on the
+      // engine's frame-by-frame seek; .call callbacks would NOT fire).
+      words.forEach(function (w, i) {
+        var el = document.getElementById("caption-word-" + g + "-" + i);
+        var at = Math.max(start, Number(w.start));
+        tl.set(el, { className: "caption-word" }, start); // upcoming (also resets on reverse-seek)
+        tl.set(el, { className: "caption-word is-active" }, at); // current
+        tl.fromTo(el, { scale: 0.985 }, { scale: 1, duration: 0.2, ease: "power1.out" }, at);
+        if (i + 1 < words.length) {
+          var nextAt = Math.max(start, Number(words[i + 1].start));
+          tl.set(el, { className: "caption-word is-spoken" }, nextAt); // demote when next activates
+        }
+      });
+      if (words.length) {
+        var lastEl = document.getElementById("caption-word-" + g + "-" + (words.length - 1));
+        var lastSpoken = Math.min(end, Number(words[words.length - 1].end) + 0.1);
+        tl.set(lastEl, { className: "caption-word is-spoken" }, lastSpoken);
+      }
+    });
+
+    // full-span anchor so the sub-comp timeline spans the whole video
+    tl.to({}, { duration: DURATION }, 0);
+    window.__timelines["captions"] = tl;
+  })();
+</script>
+
+
+
+<style>
+  .caption-line { line-height: 1.1 !important; }
+</style>
+</template>

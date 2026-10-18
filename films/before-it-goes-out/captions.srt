@@ -1,0 +1,46 @@
+1
+00:00:00,000 --> 00:00:07,915
+You give Chusky a goal. It can begin the research,
+gather the evidence, and bring the work back to you
+in a form you can review.
+
+2
+00:00:11,000 --> 00:00:20,323
+It starts by looking for people who fit the brief,
+then checks the reasons behind each match.
+The list is built from the research, not guesswork.
+
+3
+00:00:22,000 --> 00:00:32,261
+Each entry gets the useful context: what the company does,
+why it may fit, and what still needs your judgment.
+The sources stay close to the work.
+
+4
+00:00:34,000 --> 00:00:44,389
+From there, Chusky prepares a first message for each person,
+using the details it found. The drafts are saved
+in the workspace your team already uses.
+
+5
+00:00:45,000 --> 00:00:52,253
+And then it pauses. The messages are ready,
+but this mission is waiting for your approval
+before anything is sent.
+
+6
+00:00:57,000 --> 00:01:05,896
+You can review each draft, make changes, approve the next step,
+or hold the work. Chusky keeps that decision
+attached to the mission.
+
+7
+00:01:08,000 --> 00:01:18,240
+Once approved, the follow-up can be scheduled. The record shows
+what was prepared, what you authorized, when the next step
+is due, and the evidence behind it.
+
+8
+00:01:19,000 --> 00:01:25,613
+Your team stays in control while the work keeps moving.
+Chusky. Give it the goal. Keep your authority.

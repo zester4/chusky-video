@@ -1,0 +1,231 @@
+<template>
+  <div data-hf-id="hf-j530" id="root" data-composition-id="03-context" data-width="1920" data-height="1080">
+    <style>
+      @font-face { font-family: "Instrument Sans"; src: url("assets/instrument-sans-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+      @font-face { font-family: "Instrument Sans"; src: url("assets/instrument-sans-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+      @font-face { font-family: "Instrument Serif"; src: url("assets/instrument-serif-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+      @font-face { font-family: "JetBrains Mono"; src: url("assets/jetbrains-mono-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        color: #000000;
+        font-family: "Instrument Sans", sans-serif;
+      }
+      #root * { box-sizing: border-box; }
+      #root .clip {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #root .ground { z-index: 0; background: #FFFFFF; }
+      #root .rail {
+        position: absolute;
+        left: 7%;
+        top: 12.6%;
+        width: 0.08%;
+        height: 67%;
+        background: #E5E5E5;
+        transform-origin: top center;
+      }
+      #root .content {
+        position: absolute;
+        inset: 7.5% 7% 22%;
+        z-index: 1;
+      }
+      #root .eyebrow {
+        color: #5A5A5A;
+        font-size: 0.82cqw;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        line-height: 1.2;
+      }
+      #root .masthead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5.5%;
+        border-bottom: 1px solid #E5E5E5;
+      }
+      #root .state { color: #5A5A5A; font-size: 0.8cqw; letter-spacing: .08em; text-transform: uppercase; }
+      #root .selected-row {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 12%;
+        height: 13%;
+        display: grid;
+        grid-template-columns: 9% 1fr 26% 7%;
+        align-items: center;
+        padding: 0 1.4%;
+        border-bottom: 1px solid #E5E5E5;
+        background: rgba(229,229,229,.24);
+      }
+      #root .row-number {
+        color: #5A5A5A;
+        font: 400 1.65cqw/1 "Instrument Serif", Georgia, serif;
+      }
+      #root .row-name { font-size: 1.16cqw; font-weight: 600; color: #000; }
+      #root .row-meta { color: #5A5A5A; font-size: 0.92cqw; }
+      #root .row-caret { color: #5A5A5A; font-size: 1.15cqw; text-align: right; }
+      #root .dossier {
+        position: absolute;
+        top: 26%;
+        left: 0;
+        right: 0;
+        height: 64%;
+        display: grid;
+        grid-template-columns: 1.05fr .95fr;
+        gap: 6%;
+        padding-top: 3.5%;
+        border-top: 1px solid #E5E5E5;
+        transform-origin: top left;
+      }
+      #root .column { min-width: 0; }
+      #root .section-label {
+        margin: 0 0 2.6% 0;
+        color: #5A5A5A;
+        font-size: .82cqw;
+        line-height: 1.2;
+        font-weight: 600;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+      }
+      #root .company-title {
+        margin: 0 0 2.8%;
+        max-width: 85%;
+        font: 400 3.05cqw/1.08 "Instrument Serif", Georgia, serif;
+        letter-spacing: -.02em;
+      }
+      #root .description {
+        max-width: 89%;
+        margin: 0;
+        color: #5A5A5A;
+        font-size: 1.12cqw;
+        line-height: 1.5;
+      }
+      #root .fit-block {
+        margin-top: 5.2%;
+        padding-top: 2.2%;
+        border-top: 1px solid #E5E5E5;
+      }
+      #root .fit-title { margin: 0 0 1.4%; font-size: 1.13cqw; font-weight: 600; }
+      #root .fit-copy { max-width: 90%; margin: 0; color: #5A5A5A; font-size: 1.02cqw; line-height: 1.45; }
+      #root .judgment {
+        margin-top: 0;
+        padding: 2.6% 2.9%;
+        min-height: 34%;
+        border: 1px solid #E5E5E5;
+        background: rgba(229,229,229,.2);
+      }
+      #root .judgment-title { margin: 0 0 3.8%; font: 400 1.7cqw/1.16 "Instrument Serif", Georgia, serif; }
+      #root .judgment-field {
+        height: 4.2cqw;
+        border-bottom: 1px solid #B7B7B7;
+        color: #777;
+        font-size: .98cqw;
+      }
+      #root .source-area { margin-top: 4.5%; }
+      #root .source-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 3.15cqw;
+        padding: .55% 0;
+        border-bottom: 1px solid #E5E5E5;
+        color: #5A5A5A;
+        font-size: .9cqw;
+      }
+      #root .source-type { color: #000; font-size: .84cqw; }
+      #root .status-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 2%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.5%;
+        border-top: 1px solid #E5E5E5;
+        color: #5A5A5A;
+        font-size: .78cqw;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      #root .reveal { visibility: hidden; }
+    </style>
+    <div data-hf-id="hf-pci9" id="context-ground" class="clip ground" data-start="0" data-duration="12"></div>
+    <div data-hf-id="hf-gp86" id="context-rail" class="clip rail reveal" data-start="0" data-duration="12"></div>
+    <main data-hf-id="hf-147z" class="content">
+      <div data-hf-id="hf-836k" class="masthead reveal">
+        <span data-hf-id="hf-gy71" class="eyebrow">Illustrative workflow</span>
+        <span data-hf-id="hf-1utg" class="state">Research · Prospect review</span>
+      </div>
+      <div data-hf-id="hf-070f" class="selected-row reveal">
+        <span data-hf-id="hf-168w" class="row-number">01</span>
+        <span data-hf-id="hf-tp3c" class="row-name">Prospect 01</span>
+        <span data-hf-id="hf-5z4u" class="row-meta">Operations software</span>
+        <span data-hf-id="hf-ehfe" class="row-caret">＋</span>
+      </div>
+      <section data-hf-id="hf-q3ca" class="dossier reveal">
+        <div data-hf-id="hf-84me" class="column">
+          <p data-hf-id="hf-8p7s" class="section-label reveal">Company context</p>
+          <h2 data-hf-id="hf-bbcy" class="company-title reveal">A closer look</h2>
+          <p data-hf-id="hf-x2cp" class="description reveal">A software team building workflow tools for growing operations groups.</p>
+          <div data-hf-id="hf-dlj0" class="fit-block reveal">
+            <p data-hf-id="hf-mfb4" class="section-label">Why it may fit</p>
+            <p data-hf-id="hf-xvk5" class="fit-title">Similar operating focus</p>
+            <p data-hf-id="hf-d561" class="fit-copy">The product appears to address coordination work related to the goal you shared.</p>
+          </div>
+        </div>
+        <div data-hf-id="hf-aaju" class="column">
+          <div data-hf-id="hf-1gaz" class="judgment reveal">
+            <p data-hf-id="hf-xmj3" class="section-label">Needs your judgment</p>
+            <p data-hf-id="hf-zc0m" class="judgment-title">Is this the right kind of team?</p>
+            <div data-hf-id="hf-kihf" class="judgment-field">Add a note…</div>
+          </div>
+          <div data-hf-id="hf-yggy" class="source-area reveal">
+            <p data-hf-id="hf-7p61" class="section-label">Source notes</p>
+            <div data-hf-id="hf-yqbw" class="source-row"><span data-hf-id="hf-lvd9">Company website</span><span data-hf-id="hf-ucav" class="source-type">About page</span></div>
+            <div data-hf-id="hf-cnvo" class="source-row"><span data-hf-id="hf-gcqb">Product overview</span><span data-hf-id="hf-xzul" class="source-type">Public page</span></div>
+          </div>
+        </div>
+      </section>
+      <footer data-hf-id="hf-jf7u" class="status-line reveal">
+        <span data-hf-id="hf-snjq">Prospect 01 · Context</span>
+        <span data-hf-id="hf-7h8h">Review before next step</span>
+      </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      (() => {
+        const tl = gsap.timeline({ paused: true });
+        const reveal = (selector, at, duration = 0.45, y = 10) => {
+          tl.fromTo(selector,
+            { autoAlpha: 0, y },
+            { autoAlpha: 1, y: 0, duration, ease: "power2.out", stagger: 0.08 },
+            at
+          );
+        };
+        reveal(".masthead", 0.15, 0.35, 0);
+        reveal(".rail", 0.35, 0.75, 0);
+        reveal(".selected-row", 0.75, 0.55, 8);
+        tl.fromTo(".dossier", { autoAlpha: 0, scaleY: 0.025 }, { autoAlpha: 1, scaleY: 1, duration: 0.7, ease: "power2.inOut" }, 2.1);
+        reveal(".company-title", 3.05, 0.5, 8);
+        reveal(".description", 4.05, 0.55, 8);
+        reveal(".fit-block", 5.4, 0.5, 8);
+        reveal(".judgment", 7.15, 0.5, 8);
+        reveal(".source-area", 8.65, 0.55, 8);
+        reveal(".status-line", 9.8, 0.35, 0);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["03-context"] = tl;
+      })();
+    </script>
+  </div>
+</template>
+
+
+
+

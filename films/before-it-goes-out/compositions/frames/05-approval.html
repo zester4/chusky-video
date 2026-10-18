@@ -1,0 +1,284 @@
+<template>
+  <div data-hf-id="hf-mn18" id="root" data-composition-id="05-approval" data-width="1920" data-height="1080">
+    <style>
+      @font-face {
+        font-family: "Instrument Sans";
+        src: url("assets/instrument-sans-400.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Instrument Sans";
+        src: url("assets/instrument-sans-600.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Instrument Serif";
+        src: url("assets/instrument-serif-400.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        color: #000000;
+        font-family: "Instrument Sans", sans-serif;
+        container-type: size;
+      }
+      #root * { box-sizing: border-box; }
+      #root .clip {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #root .frame-05-approval-ground { z-index: 0; background: #FFFFFF; }
+      #root .frame-05-approval-page {
+        position: absolute;
+        z-index: 1;
+        left: 7%;
+        top: 11%;
+        width: 48%;
+        height: 65%;
+        padding: 3.2% 3.4%;
+        background: rgba(229,229,229,.18);
+        border: 1px solid #E5E5E5;
+        transform-origin: center;
+      }
+      #root .frame-05-approval-kicker,
+      #root .frame-05-approval-micro {
+        margin: 0;
+        color: #5A5A5A;
+        font-size: .79cqw;
+        line-height: 1.25;
+        font-weight: 600;
+        letter-spacing: .17em;
+        text-transform: uppercase;
+      }
+      #root .frame-05-approval-page-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 2.6%;
+        border-bottom: 1px solid #E5E5E5;
+      }
+      #root .frame-05-approval-page-title {
+        margin: 7% 0 1.2%;
+        font: 400 2.5cqw/1.05 "Instrument Serif", Georgia, serif;
+      }
+      #root .frame-05-approval-page-subtitle {
+        margin: 0;
+        color: #5A5A5A;
+        font-size: .95cqw;
+        line-height: 1.4;
+      }
+      #root .frame-05-approval-recipient {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: .6% 2%;
+        align-items: baseline;
+        margin-top: 6.2%;
+        padding: 2.2% 0;
+        border-top: 1px solid #E5E5E5;
+        border-bottom: 1px solid #E5E5E5;
+      }
+      #root .frame-05-approval-recipient-name { font-size: 1.03cqw; font-weight: 600; }
+      #root .frame-05-approval-recipient-type { color: #5A5A5A; font-size: .78cqw; }
+      #root .frame-05-approval-subject {
+        margin: 5.5% 0 1.4%;
+        color: #5A5A5A;
+        font-size: .76cqw;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+      }
+      #root .frame-05-approval-subject-line { margin: 0; font-size: 1cqw; font-weight: 600; }
+      #root .frame-05-approval-message {
+        max-width: 93%;
+        margin: 4% 0 0;
+        color: #5A5A5A;
+        font-size: .92cqw;
+        line-height: 1.55;
+      }
+      #root .frame-05-approval-signoff { margin: 2.5% 0 0; color: #5A5A5A; font-size: .86cqw; }
+      #root .frame-05-approval-route {
+        position: absolute;
+        z-index: 2;
+        left: 55%;
+        top: 43%;
+        width: 12%;
+        height: 1px;
+        background: #5A5A5A;
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+      #root .frame-05-approval-stop {
+        position: absolute;
+        z-index: 3;
+        left: 66.5%;
+        top: 40.5%;
+        width: 1.5%;
+        height: 5%;
+        border-left: 2px solid #000000;
+        background: #FFFFFF;
+      }
+      #root .frame-05-approval-gate {
+        position: absolute;
+        z-index: 1;
+        left: 69%;
+        right: 7%;
+        top: 13%;
+        bottom: 22%;
+        padding: 4.2% 4.4%;
+        border-left: 1px solid #E5E5E5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #root .frame-05-approval-status {
+        display: flex;
+        align-items: center;
+        gap: 1.2cqw;
+        margin: 0 0 4.3%;
+        color: #5A5A5A;
+        font-size: .83cqw;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      #root .frame-05-approval-status-mark {
+        width: .65cqw;
+        height: .65cqw;
+        border: 1px solid #000000;
+        transform: rotate(45deg);
+      }
+      #root .frame-05-approval-headline {
+        max-width: 92%;
+        margin: 0;
+        font: 400 3.25cqw/1.04 "Instrument Serif", Georgia, serif;
+      }
+      #root .frame-05-approval-note {
+        max-width: 83%;
+        margin: 4.5% 0 0;
+        color: #5A5A5A;
+        font-size: 1.03cqw;
+        line-height: 1.48;
+      }
+      #root .frame-05-approval-controls {
+        display: flex;
+        gap: 1.3cqw;
+        margin-top: 7%;
+      }
+      #root .frame-05-approval-control {
+        min-height: 3.2cqw;
+        display: flex;
+        align-items: center;
+        padding: 0 1.35cqw;
+        border: 1px solid #B7B7B7;
+        color: #000000;
+        font-size: .82cqw;
+        font-weight: 600;
+        letter-spacing: .02em;
+      }
+      #root .frame-05-approval-control-primary {
+        color: #FFFFFF;
+        background: #000000;
+        border-color: #000000;
+      }
+      #root .frame-05-approval-caption {
+        position: absolute;
+        z-index: 4;
+        left: 7%;
+        right: 7%;
+        bottom: 22%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.2%;
+        border-top: 1px solid #E5E5E5;
+        color: #5A5A5A;
+        font-size: .75cqw;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+      }
+      #root .frame-05-approval-reveal { visibility: hidden; }
+    </style>
+
+    <div data-hf-id="hf-7my9" id="approval-ground" class="clip frame-05-approval-ground" data-start="0" data-duration="12" data-track-index="0"></div>
+    <section data-hf-id="hf-hpr2" id="approval-page" class="clip frame-05-approval-page frame-05-approval-reveal" data-start="0" data-duration="12" data-track-index="1" aria-label="Illustrative outreach draft">
+      <header data-hf-id="hf-fg5w" class="frame-05-approval-page-head">
+        <p data-hf-id="hf-1jfo" class="frame-05-approval-kicker">Prepared outreach</p>
+        <p data-hf-id="hf-5lnj" class="frame-05-approval-micro">Draft 01</p>
+      </header>
+      <h2 data-hf-id="hf-f0ju" class="frame-05-approval-page-title">A considered first note</h2>
+      <p data-hf-id="hf-i6c6" class="frame-05-approval-page-subtitle">Personalized from the research gathered for this mission.</p>
+      <div data-hf-id="hf-gvyl" class="frame-05-approval-recipient">
+        <span data-hf-id="hf-1601" class="frame-05-approval-recipient-name">Prospect 01</span>
+        <span data-hf-id="hf-ws1y" class="frame-05-approval-recipient-type">Illustrative recipient</span>
+      </div>
+      <p data-hf-id="hf-dky3" class="frame-05-approval-subject">Subject</p>
+      <p data-hf-id="hf-relc" class="frame-05-approval-subject-line">A thought on your team’s workflow</p>
+      <p data-hf-id="hf-bpg2" class="frame-05-approval-message">Hello — I noticed your team is focused on making day-to-day operations easier to coordinate. We’re exploring a related idea and thought it could be useful to compare notes.</p>
+      <p data-hf-id="hf-2h4n" class="frame-05-approval-signoff">Best, &nbsp; Your team</p>
+    </section>
+    <div data-hf-id="hf-pckk" id="approval-route" class="clip frame-05-approval-route" data-start="0" data-duration="12" data-track-index="2" aria-hidden="true"></div>
+    <div data-hf-id="hf-5g8q" id="approval-stop" class="clip frame-05-approval-stop frame-05-approval-reveal" data-start="0" data-duration="12" data-track-index="3" aria-hidden="true"></div>
+    <section data-hf-id="hf-ipgu" class="frame-05-approval-gate" aria-label="Approval required">
+      <p data-hf-id="hf-9op4" class="frame-05-approval-status frame-05-approval-reveal"><span data-hf-id="hf-rogq" class="frame-05-approval-status-mark" aria-hidden="true"></span>Paused at your decision</p>
+      <h1 data-hf-id="hf-te25" class="frame-05-approval-headline frame-05-approval-reveal">Waiting for your approval</h1>
+      <p data-hf-id="hf-hjf1" class="frame-05-approval-note frame-05-approval-reveal">Nothing sent in this illustrative workflow.</p>
+      <div data-hf-id="hf-ybb0" class="frame-05-approval-controls frame-05-approval-reveal" aria-label="Simulated review controls">
+        <span data-hf-id="hf-c8qn" class="frame-05-approval-control">Review draft</span>
+        <span data-hf-id="hf-ck3q" class="frame-05-approval-control frame-05-approval-control-primary">Approve next step</span>
+      </div>
+    </section>
+    <footer data-hf-id="hf-7r2n" class="frame-05-approval-caption frame-05-approval-reveal">
+      <span data-hf-id="hf-1z1k">Illustrative workflow</span>
+      <span data-hf-id="hf-zvc0">Outbound action · held for review</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      (() => {
+        const tl = gsap.timeline({ paused: true });
+        const reveal = (selector, at, duration = 0.45, y = 8) => {
+          tl.fromTo(selector,
+            { autoAlpha: 0, y },
+            { autoAlpha: 1, y: 0, duration, ease: "power2.out", stagger: 0.08 },
+            at
+          );
+        };
+        reveal(".frame-05-approval-page", 0.2, 0.65, 8);
+        reveal(".frame-05-approval-page-head", 1.05, 0.4, 0);
+        reveal(".frame-05-approval-page-title", 1.75, 0.48, 8);
+        reveal(".frame-05-approval-recipient", 2.7, 0.45, 6);
+        reveal(".frame-05-approval-subject", 3.35, 0.35, 5);
+        reveal(".frame-05-approval-subject-line", 3.6, 0.4, 5);
+        reveal(".frame-05-approval-message", 4.2, 0.5, 6);
+        reveal(".frame-05-approval-signoff", 4.85, 0.35, 4);
+        tl.fromTo(".frame-05-approval-route",
+          { scaleX: 0 },
+          { scaleX: 1, duration: 0.8, ease: "power1.inOut" },
+          5.55
+        );
+        reveal(".frame-05-approval-stop", 6.2, 0.35, 0);
+        reveal(".frame-05-approval-status", 6.55, 0.4, 4);
+        reveal(".frame-05-approval-headline", 7.15, 0.6, 8);
+        reveal(".frame-05-approval-note", 8.1, 0.45, 6);
+        reveal(".frame-05-approval-controls", 9.0, 0.45, 6);
+        reveal(".frame-05-approval-caption", 9.8, 0.35, 0);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["05-approval"] = tl;
+      })();
+    </script>
+  </div>
+</template>
+
+
+
+
+

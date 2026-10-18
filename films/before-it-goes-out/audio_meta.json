@@ -1,0 +1,122 @@
+{
+  "tts_provider": "kokoro",
+  "voice_id": "am_michael",
+  "bgm": {
+    "source": "host",
+    "track": "Meanwhile",
+    "path": "assets/music/meanwhile-scott-buckley.mp3",
+    "artist": "Scott Buckley",
+    "license": "Creative Commons Attribution 4.0 International",
+    "url": "https://www.scottbuckley.com.au/library/meanwhile/",
+    "volume": 0.14,
+    "duration_s": 90
+  },
+  "sfx": [],
+  "voices": [
+    {
+      "frame": 1,
+      "path": "assets/voice/01.wav",
+      "duration_s": 7.915,
+      "words": [
+        {
+          "id": 1,
+          "text": "You give Chusky a goal. It can begin the research, gather the evidence, and bring the work back to you in a form you can review.",
+          "start": 0,
+          "end": 7.915
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "path": "assets/voice/02.wav",
+      "duration_s": 9.323,
+      "words": [
+        {
+          "id": 1,
+          "text": "It starts by looking for people who fit the brief, then checks the reasons behind each match. The list is built from the research, not guesswork.",
+          "start": 0,
+          "end": 9.323
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "path": "assets/voice/03.wav",
+      "duration_s": 10.261,
+      "words": [
+        {
+          "id": 1,
+          "text": "Each entry gets the useful context: what the company does, why it may fit, and what still needs your judgment. The sources stay close to the work.",
+          "start": 0,
+          "end": 10.261
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "path": "assets/voice/04.wav",
+      "duration_s": 10.389,
+      "words": [
+        {
+          "id": 1,
+          "text": "From there, Chusky prepares a first message for each person, using the details it found. The drafts are saved in the workspace your team already uses.",
+          "start": 0,
+          "end": 10.389
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "path": "assets/voice/05.wav",
+      "duration_s": 7.253,
+      "words": [
+        {
+          "id": 1,
+          "text": "And then it pauses. The messages are ready, but this mission is waiting for your approval before anything is sent.",
+          "start": 0,
+          "end": 7.253
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "path": "assets/voice/06.wav",
+      "duration_s": 8.896,
+      "words": [
+        {
+          "id": 1,
+          "text": "You can review each draft, make changes, approve the next step, or hold the work. Chusky keeps that decision attached to the mission.",
+          "start": 0,
+          "end": 8.896
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "path": "assets/voice/07.wav",
+      "duration_s": 10.24,
+      "words": [
+        {
+          "id": 1,
+          "text": "Once approved, the follow-up can be scheduled. The record shows what was prepared, what you authorized, when the next step is due, and the evidence behind it.",
+          "start": 0,
+          "end": 10.24
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "path": "assets/voice/08.wav",
+      "duration_s": 6.613,
+      "words": [
+        {
+          "id": 1,
+          "text": "Your team stays in control while the work keeps moving. Chusky. Give it the goal. Keep your authority.",
+          "start": 0,
+          "end": 6.613
+        }
+      ]
+    }
+  ],
+  "total_duration_s": 90
+}

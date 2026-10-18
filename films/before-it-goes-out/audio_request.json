@@ -1,0 +1,42 @@
+{
+  "provider": "kokoro",
+  "speed": "0.96",
+  "lines": [
+    {
+      "id": "01",
+      "text": "You give Chusky a goal. It can begin the research, gather the evidence, and bring the work back to you in a form you can review."
+    },
+    {
+      "id": "02",
+      "text": "It starts by looking for people who fit the brief, then checks the reasons behind each match. The list is built from the research, not guesswork."
+    },
+    {
+      "id": "03",
+      "text": "Each entry gets the useful context: what the company does, why it may fit, and what still needs your judgment. The sources stay close to the work."
+    },
+    {
+      "id": "04",
+      "text": "From there, Chusky prepares a first message for each person, using the details it found. The drafts are saved in the workspace your team already uses."
+    },
+    {
+      "id": "05",
+      "text": "And then it pauses. The messages are ready, but this mission is waiting for your approval before anything is sent."
+    },
+    {
+      "id": "06",
+      "text": "You can review each draft, make changes, approve the next step, or hold the work. Chusky keeps that decision attached to the mission."
+    },
+    {
+      "id": "07",
+      "text": "Once approved, the follow-up can be scheduled. The record shows what was prepared, what you authorized, when the next step is due, and the evidence behind it."
+    },
+    {
+      "id": "08",
+      "text": "Your team stays in control while the work keeps moving. Chusky. Give it the goal. Keep your authority."
+    }
+  ],
+  "bgm": {
+    "mode": "none"
+  },
+  "voice": "am_michael"
+}

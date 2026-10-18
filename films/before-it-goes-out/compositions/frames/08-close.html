@@ -1,0 +1,41 @@
+<template>
+  <div data-hf-id="hf-gzr2" id="root" data-composition-id="08-close" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:"Instrument Sans";src:url("assets/instrument-sans-400.woff2") format("woff2");font-weight:400;font-style:normal}
+      @font-face{font-family:"Instrument Sans";src:url("assets/instrument-sans-600.woff2") format("woff2");font-weight:600;font-style:normal}
+      @font-face{font-family:"Instrument Serif";src:url("assets/instrument-serif-400.woff2") format("woff2");font-weight:400;font-style:normal}
+      #root{position:relative;width:1920px;height:1080px;overflow:hidden;color:#000;font-family:"Instrument Sans",sans-serif}
+      .clip{position:absolute;inset:0;width:1920px;height:1080px}
+      .f08-ground{background:#fff}
+      .f08-rule{position:absolute;left:250px;right:250px;top:292px;height:1px;background:#c9c1b7;transform-origin:left center}
+      .f08-lockup{position:absolute;left:0;right:0;top:375px;display:flex;align-items:center;flex-direction:column;text-align:center}
+      .f08-logo{display:block;width:264px;height:auto;max-height:92px;object-fit:contain}
+      .f08-promise{margin:48px 0 0;font:400 78px/1.08 "Instrument Serif",serif;letter-spacing:-1px;color:#000}
+      .f08-cta{display:inline-flex;align-items:center;justify-content:center;min-width:250px;min-height:68px;margin-top:38px;padding:0 28px;box-sizing:border-box;border:1px solid #c9c1b7;color:#000;font:600 28px/1 "Instrument Sans",sans-serif;letter-spacing:.2px}
+      .f08-signoff{position:absolute;left:250px;right:250px;top:792px;display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid #c9c1b7;color:#5A5A5A;font:600 13px/1.2 "Instrument Sans",sans-serif;letter-spacing:2.5px;text-transform:uppercase}
+    </style>
+    <div data-hf-id="hf-r3ni" id="closing-ground" class="clip f08-ground" data-start="0" data-duration="11" data-track-index="0" aria-hidden="true"></div>
+    <div data-hf-id="hf-x0v3" class="f08-rule" id="f08-rule" aria-hidden="true"></div>
+    <main data-hf-id="hf-niv0" class="f08-lockup" aria-label="Chusky closing card">
+      <img data-hf-id="hf-e3ms" class="f08-logo" id="f08-logo" src="assets/chusky-wordmark.png" alt="Chusky">
+      <h1 data-hf-id="hf-fve0" class="f08-promise" id="f08-promise">Give Chusky the goal.</h1>
+      <div data-hf-id="hf-0n0o" class="f08-cta" id="f08-cta">Book a pilot</div>
+    </main>
+    <div data-hf-id="hf-q1n5" class="f08-signoff" id="f08-signoff" aria-hidden="true"><span data-hf-id="hf-6q26">Chusky</span><span data-hf-id="hf-hb5a">Work in motion. Authority stays yours.</span></div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      (() => {
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#f08-rule", { scaleX: 0.02 }, { scaleX: 1, duration: 1.25, ease: "power1.inOut" }, 0.2)
+          .fromTo("#f08-logo", { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.55, ease: "power2.out" }, 1.35)
+          .fromTo("#f08-promise", { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.75, ease: "power2.out" }, 2.35)
+          .fromTo("#f08-cta", { autoAlpha: 0, y: 8 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 4.25)
+          .fromTo("#f08-signoff", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4, ease: "none" }, 5.6);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["08-close"] = tl;
+      })();
+    </script>
+  </div>
+</template>
+
+

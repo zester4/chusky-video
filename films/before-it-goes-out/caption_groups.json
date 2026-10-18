@@ -1,0 +1,127 @@
+{
+  "total_duration_s": 90,
+  "width": 1920,
+  "height": 1080,
+  "groups": [
+    {
+      "id": "caption-group-0",
+      "frame": 1,
+      "start": 0,
+      "end": 8.035,
+      "text": "You give Chusky a goal. It can begin the research, gather the evidence, and bring the work back to you in a form you can review.",
+      "words": [
+        {
+          "id": "caption-word-0-0",
+          "text": "You give Chusky a goal. It can begin the research, gather the evidence, and bring the work back to you in a form you can review.",
+          "start": 0,
+          "end": 7.915
+        }
+      ]
+    },
+    {
+      "id": "caption-group-1",
+      "frame": 2,
+      "start": 11,
+      "end": 20.443,
+      "text": "It starts by looking for people who fit the brief, then checks the reasons behind each match. The list is built from the research, not guesswork.",
+      "words": [
+        {
+          "id": "caption-word-1-0",
+          "text": "It starts by looking for people who fit the brief, then checks the reasons behind each match. The list is built from the research, not guesswork.",
+          "start": 11,
+          "end": 20.323
+        }
+      ]
+    },
+    {
+      "id": "caption-group-2",
+      "frame": 3,
+      "start": 22,
+      "end": 32.381,
+      "text": "Each entry gets the useful context: what the company does, why it may fit, and what still needs your judgment. The sources stay close to the work.",
+      "words": [
+        {
+          "id": "caption-word-2-0",
+          "text": "Each entry gets the useful context: what the company does, why it may fit, and what still needs your judgment. The sources stay close to the work.",
+          "start": 22,
+          "end": 32.261
+        }
+      ]
+    },
+    {
+      "id": "caption-group-3",
+      "frame": 4,
+      "start": 34,
+      "end": 44.509,
+      "text": "From there, Chusky prepares a first message for each person, using the details it found. The drafts are saved in the workspace your team already uses.",
+      "words": [
+        {
+          "id": "caption-word-3-0",
+          "text": "From there, Chusky prepares a first message for each person, using the details it found. The drafts are saved in the workspace your team already uses.",
+          "start": 34,
+          "end": 44.389
+        }
+      ]
+    },
+    {
+      "id": "caption-group-4",
+      "frame": 5,
+      "start": 45,
+      "end": 52.373,
+      "text": "And then it pauses. The messages are ready, but this mission is waiting for your approval before anything is sent.",
+      "words": [
+        {
+          "id": "caption-word-4-0",
+          "text": "And then it pauses. The messages are ready, but this mission is waiting for your approval before anything is sent.",
+          "start": 45,
+          "end": 52.253
+        }
+      ]
+    },
+    {
+      "id": "caption-group-5",
+      "frame": 6,
+      "start": 57,
+      "end": 66.016,
+      "text": "You can review each draft, make changes, approve the next step, or hold the work. Chusky keeps that decision attached to the mission.",
+      "words": [
+        {
+          "id": "caption-word-5-0",
+          "text": "You can review each draft, make changes, approve the next step, or hold the work. Chusky keeps that decision attached to the mission.",
+          "start": 57,
+          "end": 65.896
+        }
+      ]
+    },
+    {
+      "id": "caption-group-6",
+      "frame": 7,
+      "start": 68,
+      "end": 78.36,
+      "text": "Once approved, the follow-up can be scheduled. The record shows what was prepared, what you authorized, when the next step is due, and the evidence behind it.",
+      "words": [
+        {
+          "id": "caption-word-6-0",
+          "text": "Once approved, the follow-up can be scheduled. The record shows what was prepared, what you authorized, when the next step is due, and the evidence behind it.",
+          "start": 68,
+          "end": 78.24
+        }
+      ]
+    },
+    {
+      "id": "caption-group-7",
+      "frame": 8,
+      "start": 79,
+      "end": 85.733,
+      "text": "Your team stays in control while the work keeps moving. Chusky. Give it the goal. Keep your authority.",
+      "words": [
+        {
+          "id": "caption-word-7-0",
+          "text": "Your team stays in control while the work keeps moving. Chusky. Give it the goal. Keep your authority.",
+          "start": 79,
+          "end": 85.613
+        }
+      ]
+    }
+  ]
+}

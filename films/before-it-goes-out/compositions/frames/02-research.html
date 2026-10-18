@@ -1,0 +1,238 @@
+<template>
+  <div data-hf-id="hf-vbvx" id="root" data-composition-id="02-research" data-width="1920" data-height="1080">
+    <style>
+      @font-face {
+        font-family: "Instrument Sans";
+        src: url("assets/instrument-sans-400.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Instrument Sans";
+        src: url("assets/instrument-sans-600.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 600;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Instrument Serif";
+        src: url("assets/instrument-serif-400.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "JetBrains Mono";
+        src: url("assets/jetbrains-mono-400.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        color: #000000;
+        font-family: "Instrument Sans", sans-serif;
+        background: transparent;
+        -webkit-font-smoothing: antialiased;
+      }
+      .clip { position: absolute; box-sizing: border-box; }
+      .f02-research-ground {
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        background: #FFFFFF;
+      }
+      .f02-research-rail {
+        left: 132px;
+        top: 120px;
+        width: 1px;
+        height: 744px;
+        background: #DADADA;
+        transform-origin: top;
+      }
+      .f02-research-kicker {
+        position: absolute;
+        left: 172px;
+        top: 118px;
+        font: 600 17px/1 "Instrument Sans", sans-serif;
+        letter-spacing: 3px;
+        color: #5A5A5A;
+      }
+      .f02-research-title {
+        position: absolute;
+        left: 172px;
+        top: 162px;
+        font: 400 68px/1.04 "Instrument Serif", serif;
+        letter-spacing: -1.4px;
+      }
+      .f02-research-subtitle {
+        position: absolute;
+        left: 175px;
+        top: 248px;
+        color: #5A5A5A;
+        font: 400 23px/1.45 "Instrument Sans", sans-serif;
+      }
+      .f02-research-index {
+        position: absolute;
+        right: 172px;
+        top: 128px;
+        font: 400 14px/1.4 "JetBrains Mono", monospace;
+        letter-spacing: 1.6px;
+        color: #5A5A5A;
+        text-align: right;
+      }
+      .f02-research-table {
+        left: 172px;
+        top: 342px;
+        width: 1576px;
+      }
+      .f02-research-table-head {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1576px;
+        height: 42px;
+        border-top: 1px solid #DADADA;
+        border-bottom: 1px solid #DADADA;
+        color: #5A5A5A;
+        font: 600 14px/40px "Instrument Sans", sans-serif;
+        letter-spacing: 2.2px;
+      }
+      .f02-research-col-prospect { position: absolute; left: 0; width: 255px; }
+      .f02-research-col-category { position: absolute; left: 310px; width: 335px; }
+      .f02-research-col-fit { position: absolute; left: 720px; width: 610px; }
+      .f02-research-col-context { position: absolute; left: 1366px; width: 210px; text-align: right; }
+      .f02-research-row {
+        position: absolute;
+        left: 0;
+        width: 1576px;
+        height: 132px;
+        border-bottom: 1px solid #DADADA;
+      }
+      .f02-research-prospect {
+        position: absolute;
+        left: 0;
+        top: 34px;
+        font: 400 34px/1.15 "Instrument Serif", serif;
+      }
+      .f02-research-category {
+        position: absolute;
+        left: 310px;
+        top: 38px;
+        font: 400 21px/1.35 "Instrument Sans", sans-serif;
+        color: #252525;
+      }
+      .f02-research-rationale {
+        position: absolute;
+        left: 720px;
+        top: 32px;
+        width: 600px;
+        color: #5A5A5A;
+        font: 400 20px/1.45 "Instrument Sans", sans-serif;
+      }
+      .f02-research-context {
+        position: absolute;
+        left: 1366px;
+        top: 43px;
+        width: 210px;
+        text-align: right;
+        color: #5A5A5A;
+        font: 400 13px/1.45 "JetBrains Mono", monospace;
+        letter-spacing: 0.5px;
+      }
+      .f02-research-margin-note {
+        position: absolute;
+        left: 172px;
+        top: 812px;
+        color: #5A5A5A;
+        font: 400 13px/1.5 "JetBrains Mono", monospace;
+        letter-spacing: 1px;
+      }
+      .f02-research-footer-rule {
+        left: 172px;
+        top: 792px;
+        width: 1576px;
+        height: 1px;
+        background: #DADADA;
+      }
+      .f02-research-word {
+        position: absolute;
+        right: 172px;
+        top: 811px;
+        color: #5A5A5A;
+        font: 600 14px/1.4 "Instrument Sans", sans-serif;
+        letter-spacing: 2.3px;
+      }
+      .f02-research-stage { opacity: 0; visibility: hidden; }
+    </style>
+
+    <div data-hf-id="hf-51fy" id="f02-research-ground" id="f02-research-ground" class="clip f02-research-ground" data-start="0" data-duration="11" data-track-index="0"></div>
+    <div data-hf-id="hf-ixz1" id="f02-research-rail" id="f02-research-rail" class="clip f02-research-rail" data-start="0" data-duration="11" data-track-index="1"></div>
+    <div data-hf-id="hf-femn" id="f02-research-kicker" class="clip f02-research-kicker" data-start="0" data-duration="11" data-track-index="2">ILLUSTRATIVE WORKFLOW</div>
+    <div data-hf-id="hf-qzcz" id="f02-research-title" class="clip f02-research-title" data-start="0" data-duration="11" data-track-index="3">Fit, with reasons.</div>
+    <div data-hf-id="hf-rgi8" id="f02-research-subtitle" class="clip f02-research-subtitle" data-start="0" data-duration="11" data-track-index="4">A research sheet built around signals you can inspect.</div>
+    <div data-hf-id="hf-nl5p" id="f02-research-index" class="clip f02-research-index" data-start="0" data-duration="11" data-track-index="5">MISSION FILE<br data-hf-id="hf-x5px" />RESEARCH / 02</div>
+
+    <div data-hf-id="hf-0wty" id="f02-research-table" id="f02-research-table" class="clip f02-research-table" data-start="0" data-duration="11" data-track-index="6">
+      <div data-hf-id="hf-exjf" id="f02-research-table-head" class="f02-research-stage">
+        <span data-hf-id="hf-a6wz" class="f02-research-col-prospect">PROSPECT</span>
+        <span data-hf-id="hf-m40b" class="f02-research-col-category">CATEGORY</span>
+        <span data-hf-id="hf-q08q" class="f02-research-col-fit">FIT RATIONALE</span>
+        <span data-hf-id="hf-po7k" class="f02-research-col-context">CONTEXT TO CHECK</span>
+      </div>
+      <div data-hf-id="hf-4cb0" id="f02-research-row-01" class="f02-research-row f02-research-stage" style="top:42px">
+        <span data-hf-id="hf-2yev" class="f02-research-prospect">Prospect 01</span>
+        <span data-hf-id="hf-d3g2" class="f02-research-category">Workflow software</span>
+        <span data-hf-id="hf-tq2x" class="f02-research-rationale">A team-facing product may align with the app’s operations focus.</span>
+        <span data-hf-id="hf-436x" class="f02-research-context">TEAM WORKFLOW</span>
+      </div>
+      <div data-hf-id="hf-3xrh" id="f02-research-row-02" class="f02-research-row f02-research-stage" style="top:174px">
+        <span data-hf-id="hf-2k3u" class="f02-research-prospect">Prospect 02</span>
+        <span data-hf-id="hf-8q3w" class="f02-research-category">Product-led software</span>
+        <span data-hf-id="hf-nrzx" class="f02-research-rationale">A self-serve model could make onboarding needs relevant.</span>
+        <span data-hf-id="hf-yojk" class="f02-research-context">ONBOARDING</span>
+      </div>
+      <div data-hf-id="hf-zli1" id="f02-research-row-03" class="f02-research-row f02-research-stage" style="top:306px">
+        <span data-hf-id="hf-25st" class="f02-research-prospect">Prospect 03</span>
+        <span data-hf-id="hf-g8a2" class="f02-research-category">Service platform</span>
+        <span data-hf-id="hf-s36b" class="f02-research-rationale">A service-heavy workflow may benefit from clearer handoffs.</span>
+        <span data-hf-id="hf-ste2" class="f02-research-context">HANDOFFS</span>
+      </div>
+    </div>
+    <div data-hf-id="hf-6u2g" id="f02-research-footer-rule" id="f02-research-footer-rule" class="clip f02-research-footer-rule f02-research-stage" data-start="0" data-duration="11" data-track-index="7"></div>
+    <div data-hf-id="hf-wl9z" id="f02-research-margin-note" class="clip f02-research-margin-note f02-research-stage" data-start="0" data-duration="11" data-track-index="8">POTENTIAL FIT · REVIEW THE SIGNALS BEFORE OUTREACH</div>
+    <div data-hf-id="hf-dyfs" id="f02-research-word" class="clip f02-research-word f02-research-stage" data-start="0" data-duration="11" data-track-index="9">SHORTLIST / 03</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#f02-research-kicker", { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, 0.05);
+      tl.fromTo("#f02-research-title", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 0.2);
+      tl.fromTo("#f02-research-subtitle", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 0.65);
+      tl.fromTo("#f02-research-index", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "none" }, 0.75);
+      tl.fromTo("#f02-research-rail", { scaleY: 0 }, { scaleY: 1, duration: 0.65, ease: "power2.out" }, 0.05);
+      tl.fromTo("#f02-research-table-head", { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.35);
+      tl.fromTo("#f02-research-row-01", { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 2.05);
+      tl.fromTo("#f02-research-row-02", { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 4.05);
+      tl.fromTo("#f02-research-row-03", { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power2.out" }, 6.15);
+      tl.fromTo("#f02-research-footer-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.55, ease: "power2.out" }, 7.8);
+      tl.fromTo("#f02-research-margin-note", { opacity: 0, x: -8 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, 8.15);
+      tl.fromTo("#f02-research-word", { opacity: 0, x: 8 }, { opacity: 1, x: 0, duration: 0.45, ease: "power2.out" }, 8.35);
+      window.__timelines["02-research"] = tl;
+      tl.seek(0);
+    </script>
+  </div>
+</template>
+
+
+
+
+
+
+
+
